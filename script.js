@@ -812,7 +812,7 @@ let nPerc = ((X+N)/100)*N;
 
   textarea3.innerText = isDesc + "\n" + veDesc + "\n" + apDesc + "\n" + xsDesc
   + "\n" + "Scores:" + "\n" 
-  + "Individual: " + I + " || Social: " + S + "\n" 
+  + "Individual: " + I + " || Shared: " + S + "\n" 
   + "Visceral: " + V + " || Emotional: " + E + "\n"
   + "Active: " + A + " || Passive: " + P + "\n"
   + "SeXual: " + X + " || SeNual: " + N + "\n";
