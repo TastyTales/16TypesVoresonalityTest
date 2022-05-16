@@ -112,3 +112,66 @@ p {
     border-radius: 15px;
     box-shadow: 3px 3px 12px black;
 }
+
+table {
+    width: 400px;
+    margin: 2rem;
+    font-size: 20px;
+    font-family: "Kanit", sans-serif;
+}
+
+caption {
+    font-size: 25px;
+}
+
+td {
+    border: 3px solid silver;
+    border-style: ridge;
+}
+
+table tr:first-of-type {
+    background-color: #FFFBAE;
+}
+
+table tr:nth-of-type(2) {
+    background-color: #F5898E;
+}
+
+table tr:nth-of-type(3) {
+    background-color: #99D9EA;
+}
+
+table tr:last-of-type {
+    background-color: #FFAEC9;
+}
+
+tr {
+    text-align: center;
+}
+
+tr td:first-of-type {
+    width: 40%;
+}
+
+tr td:last-of-type {
+    width: 40%;
+}
+
+tr td:nth-of-type(2) {
+    width: 10%;
+}
+
+tr td:nth-of-type(3) {
+    width: 10%;
+}
+
+.reset-button {
+    width: 150px;
+    height: auto;
+    font-family: "Kanit", sans-serif;
+    font-size: 25px;
+    background-color: rgb(218, 218, 218);
+    border-color: silver;
+    border-radius: 15px;
+    box-shadow: 3px 3px 12px black;
+}
