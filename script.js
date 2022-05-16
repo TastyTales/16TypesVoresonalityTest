@@ -17,7 +17,8 @@ var predTest = document.getElementById('pred-button'),
   textarea2 = document.getElementById('textarea2'),
   textarea3 = document.getElementById('textarea3'),
   textarea4 = document.getElementById('textarea4'),
-  resetbtn = document.getElementById('reset-button');
+  resetbtn = document.getElementById('reset-button'),
+  body = document.body;
 
 // Scores  
 var I = 0,
@@ -354,6 +355,7 @@ function question() {
 //Choosing the Test Type
 predTest.addEventListener('click', function() {
   questionNo = 0;
+   title.innerText = "Voresonality Test - Predator";
   testType = predStatements;
   resetScores();
   hideType();
@@ -363,6 +365,7 @@ predTest.addEventListener('click', function() {
 
 wpreyTest.addEventListener('click', function() {
   questionNo = 0;
+    title.innerText = "Voresonality Test - Willing Prey";
   testType = wpreyStatements;
   resetScores();
   hideType();
@@ -372,6 +375,7 @@ wpreyTest.addEventListener('click', function() {
 
 upreyTest.addEventListener('click', function() {
   questionNo = 0;
+    title.innerText = "Voresonality Test - Unwilling Prey";
   testType = upreyStatements;
   resetScores();
   hideType();
