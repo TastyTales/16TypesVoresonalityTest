@@ -5,6 +5,7 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: rgb(221, 216, 202);
+    gap: 5px;
 }
 
 .predbody {
@@ -13,14 +14,29 @@ body {
 
 h1 {
     font-family: "Kanit", sans-serif;
+    margin: 1.5rem 0 0 0;
 }
 
 h3 {
     font-family: "Kanit", sans-serif;
+    font-size: 25px;
+    margin: 15 0;
+}
+
+.progress-bar {
+    width: 20rem;
+    height: 1rem;
+    border: 0.15rem solid black;
+}
+
+.progress-bar-full {
+    height: 1.00rem;
+    background-color: rgb(109, 174, 235);
+    width: 0%;
 }
 
 p {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .pick-button-container {
@@ -71,7 +87,7 @@ p {
 .testbuttons-container {
     display: flex;
     width: 100%;
-    max-width: 450px;
+    max-width: 550px;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
@@ -82,7 +98,9 @@ p {
     width: fit-content;
     height: auto;
     font-family: "Kanit", sans-serif;
+    font-size: 16px;
     background-color: rgb(218, 218, 218);
+    border-color: silver;
     border-radius: 15px;
-    box-shadow: 5px 5px 17px black;
+    box-shadow: 3px 3px 12px black;
 }
