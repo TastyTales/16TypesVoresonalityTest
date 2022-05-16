@@ -9,7 +9,15 @@ body {
 }
 
 .predbody {
-    background-color: rgb(224, 95, 95);
+    background-color: rgb(224, 172, 95);
+}
+
+.wpreybody {
+    background-color: rgb(137, 226, 144);
+}
+
+.upreybody {
+    background-color: rgb(199, 130, 226);
 }
 
 h1 {
