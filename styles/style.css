@@ -113,6 +113,10 @@ p {
     box-shadow: 3px 3px 12px black;
 }
 
+#textarea_header {
+    font-style: italic;
+}
+
 table {
     width: -moz-fit-content;
     width: fit-content;
