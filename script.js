@@ -18,7 +18,9 @@ var predTest = document.getElementById('pred-button'),
   textarea3 = document.getElementById('textarea3'),
   textarea4 = document.getElementById('textarea4'),
   resetbtn = document.getElementById('reset-button'),
-  body = document.body;
+  body = document.body,
+  progressbar = document.getElementById('progressbar'),
+  progressbarfill = document.getElementById('progress-bar-full');
 
 // Scores  
 var I = 0,
@@ -217,7 +219,7 @@ var typeDesc = "";
 
 // Functions used to hide buttons when not in use, and show them when they are.
 
-resetbtn.style.display = "none";
+resetbtn.style.display = "block";
 
 function hideType() {
   predTest.style.display = 'none';
@@ -269,12 +271,18 @@ function resetTest() {
   showType();
   title.innerText = "Voresonality Test";
   title2.innerText = "Find out your Vore Indicator!"
-  textarea.innerText = "Created by TastyTales and Smuxray, with contributions from Eka's Portal users. This test is based off of the Myers-Briggs Personality Indicator, and is designed to show you what kind of predator or prey you are using one of 16 indicators. \n \n Please note that this test is meant to be taken for fun, and is still in its development stage. \n \n Select which test to take.";
+  textarea.innerText = "Created by TastyTales and Smuxray, with contributions from Eka's Portal users. This test is based off of the Myers-Briggs Personality Indicator, and is designed to show you what kind of predator or prey you are using one of 16 indicators. It is best to answer these questions 'In Character' for the character you want to get a result for. However, you can also answer as yourself! \n \n Please note that this test is meant to be taken for fun, and is still in its development stage. Feedback is appreciated, send your comments to @_TastyTales \n CSS by @mikhailchip \n \n Select which test to take.";
   textareaheader.innerText = "";
   textarea2.innerText = "";
   textarea3.innerText = "";
   textarea4.innerText = "";
-  resetbtn.style.display = "none";
+ resetbtn.style.display = "block";
+  document.body.classList.remove('predbody');
+    document.body.classList.remove('wpreybody');
+      document.body.classList.remove('upreybody');
+  document.getElementById("progress-bar").classList.remove("progress-bar");
+  document.getElementById("progress-bar-full").classList.remove("progress-bar-full");
+  progressbarfill.style.width = 0;
 }
 
 resetbtn.addEventListener('click', function() {
@@ -361,6 +369,9 @@ predTest.addEventListener('click', function() {
   hideType();
   showOptions();
   question();
+  document.body.className = "predbody";
+  document.getElementById("progress-bar").className += "progress-bar";
+  document.getElementById("progress-bar-full").className += "progress-bar-full";
 });
 
 wpreyTest.addEventListener('click', function() {
@@ -371,6 +382,9 @@ wpreyTest.addEventListener('click', function() {
   hideType();
   showOptions();
   question();
+   document.body.className = "wpreybody";
+   document.getElementById("progress-bar").className += "progress-bar";
+  document.getElementById("progress-bar-full").className += "progress-bar-full";
 });
 
 upreyTest.addEventListener('click', function() {
@@ -381,6 +395,9 @@ upreyTest.addEventListener('click', function() {
   hideType();
   showOptions();
   question();
+  document.body.className = "upreybody";
+  document.getElementById("progress-bar").className += "progress-bar";
+  document.getElementById("progress-bar-full").className += "progress-bar-full";
 });
 
 
@@ -419,6 +436,7 @@ function typeCheck() {
 
 stragr.addEventListener('click', function() {
   inc = 2;
+  progressbarfill.style.width + 2.5;
   typeCheck();
   QuestionNo++;
   checkFinal()
@@ -796,27 +814,27 @@ let nPerc = ((X+N)/100)*N;
   let xsDesc = "";
 
   if (I >= S) {
-    isDesc = "Individual (I) characters generally don't put much thought toward their partner and their partner's feelings; nor would they put much effort into making the experience enjoyable for their partner. Individual characters aren't necessarily averse to taking it slow and having a little fun beforehand, but in the end they're in it to please themselves. In the case of unwilling prey, Individual means they could care less what their predator wants, they just want to escape and not have to experience it. Willing prey would seek to satisfy their own fantasy regardless of their predator's orientation. \n";
+    isDesc = "<b>Individual (I)</b> characters generally don't put much thought toward their partner and their partner's feelings; nor would they put much effort into making the experience enjoyable for their partner. Individual characters aren't necessarily averse to taking it slow and having a little fun beforehand, but in the end they're in it to please themselves. In the case of unwilling prey, Individual means they could care less what their predator wants, they just want to escape and not have to experience it. Willing prey would seek to satisfy their own fantasy regardless of their predator's orientation. \n";
   } else {
-    isDesc = "Shared (S) characters can only truly enjoy themselves if their partner is enjoying themselves as well. Though they still seek to achieve their own goals, they do so with respect to their partner's wishes. Shared predators prefer to eat only willing prey, or maybe coax the prey into sliding down their gullet; and, in the event that they do devour unwilling prey (perhaps out of absolute need), they feel remorseful about it, genuinely valuing their prey's emotions. Shared prey characters tend to go willingly and aim to please their predator as best they can on their way down. Unwillingness in Shared prey characters usually amounts to something more like reluctance- they didn't want to be food, but they may as well go along with it now that it's happening. \n";
+    isDesc = "<b>Shared (S)</b> characters can only truly enjoy themselves if their partner is enjoying themselves as well. Though they still seek to achieve their own goals, they do so with respect to their partner's wishes. Shared predators prefer to eat only willing prey, or maybe coax the prey into sliding down their gullet; and, in the event that they do devour unwilling prey (perhaps out of absolute need), they feel remorseful about it, genuinely valuing their prey's emotions. Shared prey characters tend to go willingly and aim to please their predator as best they can on their way down. Unwillingness in Shared prey characters usually amounts to something more like reluctance- they didn't want to be food, but they may as well go along with it now that it's happening. \n";
   }
   if (V >= E) {
-    veDesc = "Visceral (V) characters do what they do because they need it, or it simply makes sense. Predators with a Visceral leaning are driven by their raw hunger, or their physical desire to partake in the act, or simply for the need to fuel their body. Visceral prey, when willing, are much the same- they want to be eaten because it feels good, they enjoy the experience physically. Unwilling Visceral prey are motivated purely by their will to survive, or their fear of the pain and/or discomfort of being trapped inside a predator. \n";
+    veDesc = "<b>Visceral (V)</b> characters do what they do because they need it, or it simply makes sense. Predators with a Visceral leaning are driven by their raw hunger, or their physical desire to partake in the act, or simply for the need to fuel their body. Visceral prey, when willing, are much the same- they want to be eaten because it feels good, they enjoy the experience physically. Unwilling Visceral prey are motivated purely by their will to survive, or their fear of the pain and/or discomfort of being trapped inside a predator. \n";
   } else {
-    veDesc = "Emotional (E) characters tend to focus on the deeper implications behind the whole process of vore. Emotional predators do what they do because they enjoy the relationship with their prey- be it one of affection, or domination- or because they enjoy the thought of holding another being inside themselves and/or turning their prey into a part of their own body. They might enjoy it when their prey begs or struggles while a Visceral predator would likely see such things as a nuisance, something keeping them from their food. Emotional willing prey function much the same way, enjoying the act because it fulfills their desire to be dominated, or to be intimate with their predator, or to be very intimate with their predator- i.e, digested. Emotional unwilling prey want to escape for those very reasons- not for the fear of the physical sensations, but rather the implications of being subjugated in such a way- and, potentially, of not getting to continue with their own life. \n";
+    veDesc = "<b>Emotional (E)</b> characters tend to focus on the deeper implications behind the whole process of vore. Emotional predators do what they do because they enjoy the relationship with their prey- be it one of affection, or domination- or because they enjoy the thought of holding another being inside themselves and/or turning their prey into a part of their own body. They might enjoy it when their prey begs or struggles while a Visceral predator would likely see such things as a nuisance, something keeping them from their food. Emotional willing prey function much the same way, enjoying the act because it fulfills their desire to be dominated, or to be intimate with their predator, or to be very intimate with their predator- i.e, digested. Emotional unwilling prey want to escape for those very reasons- not for the fear of the physical sensations, but rather the implications of being subjugated in such a way- and, potentially, of not getting to continue with their own life. \n";
   }
   if (A >= P) {
-    apDesc = "Active (A) characters go out of their way to make things happen, putting in real effort to achieve their desires. The significance of this trait in predators is simple enough- active predators are the types who hunt regularly, or commonly seek out vore opportunities. Once they have their prey, active predators will likely want to get right to the point, and also probably won't be afraid to apply a little force to get what they want. Active prey will of course actively resist or struggle against their predator- or, in willing cases, intentionally seek out or encourage a pred to make a meal out of them. \n";
+    apDesc = "<b>Active (A)</b> characters go out of their way to make things happen, putting in real effort to achieve their desires. The significance of this trait in predators is simple enough- active predators are the types who hunt regularly, or commonly seek out vore opportunities. Once they have their prey, active predators will likely want to get right to the point, and also probably won't be afraid to apply a little force to get what they want. Active prey will of course actively resist or struggle against their predator- or, in willing cases, intentionally seek out or encourage a pred to make a meal out of them. \n";
   } else {
-    apDesc = "Passive (P) characters generally go with the flow of things, more often being drawn into situations than creating them. Passive predators are more inclined to wait and watch potential prey go by rather than simply grabbing one- perhaps coming up with a detailed plan to claim their prize, or luring prey close using their own appealing body. Passive predators can also simply not see themselves as predators, or try to resist their hunger when they're around prey (often failing to do so when the temptation becomes too much). Passive prey, naturally, tends to submit once the predator has them in their grasp- giving in for a host of possible reasons ranging from subservience to despair to sexual thrill. Willing types will happily subject themselves to their predator's whims, serving the role of 'toy' or 'food' with few objections. Unwilling Passive types tend to be more defeatist in nature- giving up struggling once they realize it's hopeless (while Active types tend to struggle on and on regardless of how hopeless it may seem). \n";
+    apDesc = "<b>Passive (P)</b> characters generally go with the flow of things, more often being drawn into situations than creating them. Passive predators are more inclined to wait and watch potential prey go by rather than simply grabbing one- perhaps coming up with a detailed plan to claim their prize, or luring prey close using their own appealing body. Passive predators can also simply not see themselves as predators, or try to resist their hunger when they're around prey (often failing to do so when the temptation becomes too much). Passive prey, naturally, tends to submit once the predator has them in their grasp- giving in for a host of possible reasons ranging from subservience to despair to sexual thrill. Willing types will happily subject themselves to their predator's whims, serving the role of 'toy' or 'food' with few objections. Unwilling Passive types tend to be more defeatist in nature- giving up struggling once they realize it's hopeless (while Active types tend to struggle on and on regardless of how hopeless it may seem). \n";
   }
   if (X >= N) {
-    xsDesc = "SeXual (X) characters see vore as an act of temptation, sprouting from lust. Generally, any Sexual character would be hard-pressed to resist becoming aroused if they happened to be drawn into a vore scenario. Sexual predators seek out food to satisfy their carnal urges in tandem with any other motivations, including hunger, the desire to dominate, and/or put some extra weight on their hips. Sexual prey enjoy the experience similarly, taking pleasure in being their predator's meal, plaything or body-fuel- regardless of whether they do so willingly or unwillingly. \n";
+    xsDesc = "<b>SeXual (X)</b> characters see vore as an act of temptation, sprouting from lust. Generally, any Sexual character would be hard-pressed to resist becoming aroused if they happened to be drawn into a vore scenario. Sexual predators seek out food to satisfy their carnal urges in tandem with any other motivations, including hunger, the desire to dominate, and/or put some extra weight on their hips. Sexual prey enjoy the experience similarly, taking pleasure in being their predator's meal, plaything or body-fuel- regardless of whether they do so willingly or unwillingly. \n";
   } else {
-    xsDesc = "SeNsual (N) characters see vore as an act of plain pleasure, satisfaction, or perhaps of pure hunger. They don't associate the sexual element with it directly like Sexual types do- although this doesn't mean they can't still have a sexually involved vore experience now and then. Sensual predators can have all sorts of motivations depending on their other personality aspects, but generally, they do vore for food, satisfaction, bonding or fun- and not as an act of lust in and of itself. Sensual prey likewise enjoy the experience without the need for eroticism- or perhaps they're just some unfortunate unwilling prey-type, one that's pure enough not to take guilty pleasure in being devoured. \n";
+    xsDesc = "<b>SeNsual (N)</b> characters see vore as an act of plain pleasure, satisfaction, or perhaps of pure hunger. They don't associate the sexual element with it directly like Sexual types do- although this doesn't mean they can't still have a sexually involved vore experience now and then. Sensual predators can have all sorts of motivations depending on their other personality aspects, but generally, they do vore for food, satisfaction, bonding or fun- and not as an act of lust in and of itself. Sensual prey likewise enjoy the experience without the need for eroticism- or perhaps they're just some unfortunate unwilling prey-type, one that's pure enough not to take guilty pleasure in being devoured. \n";
   }
 
-  textarea3.innerText = isDesc + "\n" + veDesc + "\n" + apDesc + "\n" + xsDesc;
+  textarea3.innerHTML = isDesc + "<br /> <br />" + veDesc + "<br /> <br />" + apDesc + "<br /> <br />" + xsDesc;
 
   textarea4.innerText =  "Scores:" + "\n" 
   + "Individual: " + I + " || Shared: " + S + "\n" 
