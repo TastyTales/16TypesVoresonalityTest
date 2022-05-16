@@ -1,16 +1,12 @@
-- Finished all Predator Descriptions v2
+- Finished all Descriptions v2
 
 Work to be done:
 
-Descriptions to rewrite:
-IEPX W/U, 
-SVAN W/U, 
-SVAX W/U, 
-SVPN W/U, 
-SVPX W/U, 
-SEAN W/U, 
-SEAX W/U, 
-SEPN W/U,
-SEPX W/U. 
-
 Add Percentages.
+
+Pretty it Up. 
+
+Rework Descriptions to follow format ("You are" or "IEPN is").
+
+Add relationships with other types.
+Add 'Type overview page'

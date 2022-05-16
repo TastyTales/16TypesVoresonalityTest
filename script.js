@@ -13,6 +13,7 @@ var predTest = document.getElementById('pred-button'),
   title = document.getElementById('title'),
   title2 = document.getElementById('title2'),
   textarea = document.getElementById('textarea'),
+  textareaheader = document.getElementById('textarea_header'),
   textarea2 = document.getElementById('textarea2'),
   textarea3 = document.getElementById('textarea3'),
   resetbtn = document.getElementById('reset-button');
@@ -267,6 +268,7 @@ function resetTest() {
   title.innerText = "Voresonality Test";
   title2.innerText = "Find out your Vore Indicator!"
   textarea.innerText = "Created by TastyTales and Smuxray, with contributions from Eka's Portal users. This test is based off of the Myers-Briggs Personality Indicator, and is designed to show you what kind of predator or prey you are using one of 16 indicators. \n \n Please note that this test is meant to be taken for fun, and is still in its development stage. \n \n Select which test to take.";
+  textareaheader.innerText = "";
   textarea2.innerText = "";
   textarea3.innerText = "";
   resetbtn.style.display = "none";
@@ -471,118 +473,141 @@ function descriptions() {
     case "IVAN":
       title2.innerText = "The Apex Predator";
       textarea.innerText = typeDesc;
+      textareaheader.innerText = "'You're all mine now, little snack!'"
       textarea2.innerText = "You are an Alpha Predator. Filling your gut is all that matters to you, and there are plenty of tasty prey in the world to fill it with. You hunt them actively, pursuing prey for the sole purpose of feeding your insaitable hunger. They may kick and struggle but, being top of the food chain, you will always win in the end. \n";
       break;
     case "IVAX":
       title2.innerText = "The Ravenous";
+      textareaheader.innerText = "'Mmm, keep squirming all you want, there's no way out~'"
       textarea.innerText = typeDesc;
       textarea2.innerText = "Feeding your stomach is one thing, but you're drawn to far more... carnal desires. When some hapless prey goes down your throat, they're contributing not only to your body but a fun night of passion. The IVAX predator revels in a squirming prey, especially one that knows how to push against all the right places. \n";
       break;
     case "IVPN":
       title2.innerText = "The Spider";
+      textareaheader.innerText = "'You know, things would be a lot easier if you just admitted you want this as much as I do~'"
       textarea.innerText = typeDesc;
       textarea2.innerText = "The IVPN does not go out of its way to find prey. You know that in time the food will come to you if you're patient. This hunting strategy usually leaves you famished, so when a prey comes your way you don't hesitate to devour them and enjoy a well earned meal. It's true what they say; Good things come to those who wait. \n";
       break;
     case "IVPX":
       title2.innerText = "The Siren";
+      textareaheader.innerText = "'Come now, wouldn't you love to be a part of this beautiful form?'"
       textarea.innerText = typeDesc;
       textarea2.innerText = "Unlike their IVPN counterparts, IVPX predators consider a prey's looks before they decide on making them a meal. You much prefer a meal to be cute or attractive, it makes them taste better in ways you can't put your finger on. On the other hand, you may just be making sure that only the highest quality of prey go into your body, knowing that after they're digested your curves will be all the more noticable for it. \n";
       break;
     case "IEAN":
       title2.innerText = "The Seeker";
+      textareaheader.innerText = "'Struggle all you want, it won't change things between us.'"
       textarea.innerText = typeDesc;
       textarea2.innerText = "IEAN predators have their reasons to eat others. Whether they're filling their bellies with people who have wronged them, or whether doing so makes them feel superior,  the Seeker archetype uses vore as a means to an emotional end. \n";
       break;
     case "IEAX":
       title2.innerText = "The Bully";
+      textareaheader.innerText = "'I'm going to find out what makes you tick, and keep you ticking all the way down~'"
       textarea.innerText = typeDesc;
       textarea2.innerText = "You always know the right thing to say to make your prey squirm. The IEAX predator finds joy in taunting and teasing their prey into squirming in their gut. They devour prey for amusement, and love it when their prey has a lot of energy to use up in their stomach. They can sometimes get tired of passive or willing prey, but it can also prove to be a fun challenge to figure out what to do to get a reaction out of them. IEAX predators are not always malicious, however. An IEAX predator could also be a predator who likes to flirt with their prey, teasing them as they eat them. \n";
       break;
     case "IEPN":
       title2.innerText = "The Trapper";
+      textareaheader.innerText = "'We both know I want it... the question is, when will you?'"
       textarea.innerText = typeDesc;
       textarea2.innerText = "IEPN predators love to lure their prey into a false sense of security. They get to know them, often hinting at their fate whilst never outright saying it. In some ways, prey of IEPN know that they are just a meal to them, and yet the IEPN's natural charisma encourages them to remain friends. The IEPN eats to satisfy a desire of Emotional connection to their prey as well as the sensations that come with the process. They can be equally passionate predators and clever tricksters.";
       break;
     case "IEPX":
       title2.innerText = "The Temptress";
+      textareaheader.innerText = "'I'll give you the ride of your life, which happens to end in a long slide to my stomach.'"
       textarea.innerText = typeDesc;
-      textarea2.innerText = "The Temptress can often be found at bars, simply waiting for prey to notice them. They wink and slip away from the crowd, guiding they prey into a quiet area where they can get to know eachother better, both emotionally and physically. The IEPN predator enjoys playing games with their prey, luring them into a night of passion (at least, for them) and devouring them when they least expect it. Their seductive nature makes them hard to resist for most, though being Passive they tend to wait for their prey to come to them instead. \n";
+      textarea2.innerText = "The Temptress can often be found in public, simply waiting for prey to notice them. They wink and slip away from the crowd, guiding they prey into a quiet area where they can get to know eachother better, both emotionally and physically. The IEPN predator enjoys playing games with their prey, luring them into a night of passion (at least, for them) and devouring them when they least expect it. Their seductive nature makes them hard to resist for most, though being Passive they tend to wait for their prey to come to them instead. \n";
       break;
     case "SVAN":
       title2.innerText = "The Companion";
+      textareaheader.innerText = "'Friends are the tastiest food of all!'"
       textarea.innerText = typeDesc;
       textarea2.innerText = "SVAN are much friendlier predators than their IVAN counterparts. They often seek out willing prey to sate their appetite and try to make the experience an enjoyable one for both sides. While they still eat primarily to satisfy their hunger, their Shared nature ensures that their gluttony will never take precedence over the comfort of their prey. \n";
       break;
     case "SVAX":
       title2.innerText = "The Host";
+      textareaheader.innerText = "'I want you to be comfortable with this.'"
       textarea.innerText = typeDesc;
       textarea2.innerText = "SVAX predators like to make their prey feel comfortable before the main event, outlining clearly what is about to happen to them. They explain their hunger and their desire to be filled, and how good it will feel for both them and their prey. Their passion is infectious, often convincing even the most unwilling prey of their arousal at the prospect of being eaten. The host can use their skills to trick prey, but most would rather that their prey be as satisfied with the outcome as they are. \n";
       break;
     case "SVPN":
       title2.innerText = "The Tempted";
+      textareaheader.innerText = "'I'm really sorry about this, but I'm just so hungry...'"
       textarea.innerText = typeDesc;
       textarea2.innerText = "The SVPN is at a constant battle with their urges. They have plenty of prey friends, but when their stomach starts growling all they can think about doing is eating them. They try to ignore the feelings, despite how good it would be to just give in and binge on lots of prey. Finding a willing prey partner is a welcome relief of SVPN... if they can convince themselves to stop at just eating one prey, anyway. \n";
       break;
     case "SVPX":
       title2.innerText = "The Lustful";
+      textareaheader.innerText = "'Sex is great, but have you tried getting devoured? Omph!'"
       textarea.innerText = typeDesc;
       textarea2.innerText = "Wild nights of frisky passion usually end with a full belly for the SPVX. They can sometimes lose themselves in the moment, wanting to feel their partners deeper than they can possibly go. They may use vore to help themselves or their partner achieve climax, or as a way to cuddle with them after spending time with them. In any case, SVPX predators are lovers with a voracious appetite. \n";
       break;
     case "SEAN":
       title2.innerText = "The Keeper";
+      textareaheader.innerText = "'The way to my heart is through my stomach!'"
       textarea.innerText = typeDesc;
       textarea2.innerText = "SEAN predators like to keep their friends close, and what better way to do that than keeping them inside them? These predators love to spend quality time with the prey in their stomach, often holding them for extended periods of time even while they go about their day to day lives. SEAN predators are likely candidates for endosoma given their love of keeping prey in their bellies for the emotional comfort it brings them. \n";
       break;
     case "SEAX":
       title2.innerText = "The Collector";
+      textareaheader.innerText = "'I'd love for us to always be together, even if that means having you on my hips.'"
       textarea.innerText = typeDesc;
       textarea2.innerText = "SEAX predators have an eye for quality when it comes to prey. They are social creatures, enjoying getting to know any attractive individual who catches their eye. They encourage prey to explore their body and give their opinions on where they'd like to end up on it, though they're more likely to go to 'fun' areas. Their Shared and Emotional traits give them a strong preference for willing prey, who actively search for when 'hunting'. \n";
       break;
     case "SEPN":
       title2.innerText = "The Nurturer";
+      textareaheader.innerText = "'How's that? feeling comfortable? You just let me know when you want out.'"
       textarea.innerText = typeDesc;
       textarea2.innerText = "SEPN predators love to make their prey feel warm and cozy, often encouraging them with comforting words before and after they are done eating them. They lean towards keeping their prey safe and secure, and are reluctant when it comes to anything that would cause their prey harm such as digestion. Some SEPN predators don't even consider themselves to be predators at all, choosing only to eat when a prey comes to them seeking to experience vore. \n";
       break;
     case "SEPX":
       title2.innerText = "The Romantic ";
+      textareaheader.innerText = "'I want to feel you inside of me, but only if you want that too.'"
       textarea.innerText = typeDesc;
-      textarea2.innerText = "Romantics, Lovers, Seekers of passion. SEPX predators understand the intimiate nature of vore better than anyone. It is a display of pleasure between two people who both want them same thing; an intimate closeness like no other. SEPX predators do not actively seek prey, but instead offer them the chance to explore their bodies of their own free will. Once inside them, the SEPX takes great sexual pleasure in both their own and their prey's arousal. They often choose to spit their prey out after they're done, or at least find means to revive them as SEPX predators form strong connections with those they eat, and wouldn't want them to be harmed. \n";
+      textarea2.innerText = "Romantics, Lovers, Seekers of passion. SEPX predators understand the intimiate nature of vore better than anyone. It is a display of passion between two people who both want them same thing; an intimate closeness like no other. SEPX predators do not actively seek prey, but instead offer them the chance to explore their bodies of their own free will. Once inside them, the SEPX takes great sexual pleasure in both their own and their prey's arousal. They often choose to spit their prey out after they're done, or at least find means to revive them as SEPX predators form strong connections with those they eat, and wouldn't want them to be harmed. \n";
       break;
       
       /* WILLING PREY DESCRIPTIONS */
 
     case "IVAN-W":
       title2.innerText = "The Snack";
+      textareaheader.innerText = "'What're you waiting for? Open up so I can dive in!'"
       textarea.innerText = typeDesc;
-      textarea2.innerText = "Ever since you were young you had a strange desire to be eaten. Perhaps it was the tight embrace of the throat, the low gurgles of a stomach or imagining yourself hanging off the waist of some lucky predator, but you knew you were destined to be food. You seek out predators and try to actively get eaten by them, to the point that most know you mostly as being a willing snack who's always up to be eaten. \n";
+      textarea2.innerText = "You're not sure when it started, but you have a strange desire to be eaten. Perhaps it was the tight embrace of the throat, the low gurgles of a stomach or imagining yourself hanging off the waist of some lucky predator, but you knew you were destined to be food. You seek out predators and try to actively get eaten by them, to the point that most know you mostly as being a willing snack who's always up to be devoured. \n";
       break;
     case "IVAX-W":
       title2.innerText = "The Thrillseeker";
+      textareaheader.innerText = "'Your tongue looks so slimy, I can't wait to feel it all over me~'"
       textarea.innerText = typeDesc;
       textarea2.innerText = "You're active in the pursuit of your vorish dreams, turning your fantasies into reality with each predator you meet. Some are taken aback by just how eager you are, but the motions you make in their stomach after you're devoured clear up any doubts. To you, being eaten is a fetish, and it's one you'll do anything to experience. \n";
       break;
     case "IVPN-W":
       title2.innerText = "The Patient";
+      textareaheader.innerText = "'I'm not sure what's taking them so long, aren't I delicious enough already?'"
       textarea.innerText = typeDesc;
       textarea2.innerText = "You are no stranger to waiting. You often listen to other prey talking about predators they've had experiences with. While you'd love to feel the warm embrace of a stomach, your passive nature prevents you from approaching predators. instead you wait, knowing sooner or later a predator will hunt you down and devour you. \n";
       break;
     case "IVPX-W":
       title2.innerText = "The Daydreamer";
+      textareaheader.innerText = "'Wh-what? Sorry, I was distracted.'"
       textarea.innerText = typeDesc;
       textarea2.innerText = "You're caught in an almost constant state of fantasizing about being prey. The hot breath of a predator, their warm tongue between your legs as you slide down their throat. These daydreams make you squirm in delight, but you can't bring yourself to act on them. Still, if a predator were to corner you or put the offer forward... \n";
       break;
     case "IEAN-W":
       title2.innerText = "The Worshipper";
+      textareaheader.innerText = "'It's so soothing, please don't ever let me go.'"
       textarea.innerText = typeDesc;
       textarea2.innerText = "Something about stomachs make you feel at peace. You've never known comfort like the embracing walls of a gut. The IEAN-W prey seeks out predators for the emotional comfort they get from them, or the knowledge they are fulfilling their purpose as prey. \n";
       break;
     case "IEAX-W":
       title2.innerText = "The Explorer";
+      textareaheader.innerText = "'Who's hungry~?'"
       textarea.innerText = typeDesc;
       textarea2.innerText = "The IEAX-W is a promiscious prey. They enjoy the emotional elements of vore, finding sexual arousal in the excitement of a gut. However, their Individual nature means that they are not tied down to a single predator. They adventure from place to place, finding new throats to delve down and stomachs to explore. An IEAX-W prey will always have plenty of stories to tell about their experiences. \n";  
       break;
     case "IEPN-W":
       title2.innerText = "The Wallflower";
+      textareaheader.innerText = "'A predator who recognises you as food and treats you like it... Mmh, I might have to sit down.'"
       textarea.innerText = typeDesc;
       textarea2.innerText = "The IEPN-W is often confused with the IVPX-W Daydreamer, though any IEPN-W prey would make it clear their desires are more than simply 'being eaten'. They fantasize about the sensations of the stomach around them as their predator taunts them from the outside, the knowledge that they are nothing but food to the powerful creature that has consumed them. They often don't care who their predator is, just that someday, somehow, they will be approached by someone who can make them feel like a special treat, and devour them in a single gulp. \n"; 
       break;
@@ -591,147 +616,171 @@ function descriptions() {
 
     case "IEPX-W":
       title2.innerText = "The Blusher";
+      textareaheader.innerText = "'O-oh heck, maws!'"
       textarea.innerText = typeDesc;
-      textarea2.innerText = "As willing prey: More akin to the IEAX, this prey is likely to be very submissive, allowing them to be taunted and humiliated before, during, or after consumption to get aroused. Alternatively, they may be more similar to the IEPN, wishing that a sexually attractive predator would come to them so that they could be taken advantage of and consumed. \n";
+      textarea2.innerText = "The IEPX are easily flustered, blushing at the mere sight of a predator. Their Passive trait leads them to usually being submissive in nature, leaving them at the whims of any predator who can taunt and tease them into arousal. They favour sexually attractive predators, particularly if they can appeal to their Emotional trait. \n";
       break;
     case "SVAN-W":
       title2.innerText = "The Committed";
+      textareaheader.innerText = "'I can't think of anyone I'd rather be eaten by than you.'"
       textarea.innerText = typeDesc;
-      textarea2.innerText = "As willing prey: Willing though, this prey might see themselves as food but, rather than find any predator to sate that desire, they're reserving themselves for either a friend or perhaps a needy predator. They may also make sure that their enjoys eating them as much as the prey enjoys being eaten. \n";
+      textarea2.innerText = "The SVAN-W may see themselves as food but, rather than find any predator to sate that desire like their IVAN counterpart, they're reserving themselves for either a friend or perhaps a needy predator. While the relationship between them and their predator remains an exchange when it comes to vore (IE the experience of being eaten for the joy of eating them), the SVAN prey is likely to quickly make predator friends who they can call on when feel the urge to delve into a stomach. \n";
       break;
     case "SVAX-W":
       title2.innerText = "The Flavourful";
+      textareaheader.innerText = "'Does something smell delicious around here, or is it just me?'"
       textarea.innerText = typeDesc;
-      textarea2.innerText = "As willing prey: With a kinky aspect added into the situation, this prey might desire to make themselves as attractive to potential predators as possible, whether that be dressing provacatively, covering themselves with condiments, or whatever else that might make a potential predator see themselves as a delicious, pleasurable morsel. \n";
+      textarea2.innerText = "The SVAX-W follows their SVAN counterpart of having close relationships with their predators, however with a kinky aspect added into the situation, this prey might desire to make themselves as attractive to potential predators as possible, whether that be dressing provacatively, covering themselves with condiments, or whatever else that might make a potential predator see themselves as a delicious, pleasurable morsel. They actively persue predators for raunchy encounters, experiencing the excitement of vore along with the compliments they get from those who eat them. \n";
       break;
     case "SVPN-W":
-      title2.innerText = "The Sheep";
+      title2.innerText = "The Friend";
+            textareaheader.innerText = "'You can eat me if you want to, I don't mind.'"
       textarea.innerText = typeDesc;
-      textarea2.innerText = "As willing prey: While not actively looking to be food, this is the prey who will likely get to know several predators as friends in the hopes that one of them will eventually decide to eat them, rather than try their luck with strangers. If this prey gets to be food to a friend, then they are satisfied. \n";
+      textarea2.innerText = "While not actively looking to be food, the SVPN-W prey will likely get to know several predators in the hopes that one of them will eventually decide to eat them, rather than try their luck with strangers. If this prey gets to be food to a friend, then they are satisfied, but often they struggle with getting the courage to make their true feelings about being eaten clear to the point where their predator friends might just assume they're not interested. \n";
       break;
     case "SVPX-W":
-      title2.innerText = "The Lover";
+      title2.innerText = "The Pleaser";
+            textareaheader.innerText = "'Hff, eat me... please, I'm so turned on right now.'"
       textarea.innerText = typeDesc;
-      textarea2.innerText = "As willing prey: This is the prey who will actively to try to get into a sexal and/or romantic relationship with a predator in the hopes that a nighttime romp might lead to them being in or on a belly after all is said and done. \n";
+      textarea2.innerText = "To the SVPX-W, being eaten is the ultimate climax. They seek to create connections with predators who they find attractive in the hopes of being devoured and adding themselves to their form, or just making a bulge in their sexy guts for a while. However unlike their SVAX counterparts, the SVPX-W would rather the predator do most of the work in taking control and devouring them while they submit to them completely and enjoy the ride. Unlike the SEPX-W, the SVPX focuses on the raw passion in the heat of the moment with their predator, getting pleasure out of pleasing their predator in a potentially unstable feedback loop, if they find the right predator type to match up with. \n";
       break;
     case "SEAN-W":
       title2.innerText = "The Eager";
+            textareaheader.innerText = "'We're such close friends, and I have a way for us to be even closer.'"
       textarea.innerText = typeDesc;
-      textarea2.innerText = "As willing prey: This prey will likely have similar views to their predator counterpart, seeking to spend a lot of time inside of them for fun. This prey will actively encourage this to happen and may give the predator internal belly rubs to help keep themselves inside. They might also wish to become one with their predator, feeling that both parties will be benefitted with the prey becoming part of a greater whole. \n";
+      textarea2.innerText = "The SEAN-W prey will often have similar views to their predator counterpart; seeking to spend a lot of time inside of them for fun. This prey will actively encourage this to happen and may give the predator internal belly rubs to help keep themselves inside. They might also wish to become one with their predator, feeling that both parties will be benefitted with the prey becoming part of a greater whole. In any case, they are often sociable and are able to form deeper bonds with the other predator archetypes, but may find IV- types too intense. \n";
       break;
     case "SEAX-W":
       title2.innerText = "The Flirtatious";
+            textareaheader.innerText = "'I really enjoy our little talks, but our conversation would be even better with a wall of fat between us~'"
       textarea.innerText = typeDesc;
-      textarea2.innerText = "As willing prey: This prey will encourage and return sexual teasing and taunting, perhaps goading the predator to into becoming aroused enough to consume their prey in a lust-filled state. If the predator isn't enjoying it as they are, then they likely won't wish to be eaten as vore isn't fun unless both sides are happy. They might also seek to become part of an attractive predator, or perhaps to help make a predator more attractive, as they might feel more sexy being part of predator's sexual features or otherwise making them more beautiful. \n";
+      textarea2.innerText = "The SEAX-W prey is well aware of their interests, and delights in finding predators who match them. They encourage and return sexual teasing and taunting, perhaps goading the predator to into becoming aroused enough to consume their prey in a lust-filled state. If the predator isn't enjoying or returning the teasing, then they likely won't wish to be eaten by them as vore isn't fun unless both sides are happy. They might also seek to become part of an attractive predator, or perhaps to help make a predator more attractive, as they might feel more sexy being part of predator's curves or otherwise making them more beautiful. \n";
       break;
     case "SEPN-W":
       title2.innerText = "The Servant";
+            textareaheader.innerText = "'I can't wait to be inside you, or to be a part of you...'"
       textarea.innerText = typeDesc;
-      textarea2.innerText = "As willing prey: This is very much like the unwilling SEPN, except, like the predator, they are all too happy to give into the desires rather an hesitate. However long their stay is up to their predator, they'll be content to sit back and relax deep inside of their friend's body. They perhaps might see themselves as their friend's personal snack or chew toy, to be taken and used whenever they want to play. \n";
+      textarea2.innerText = "The SEPN-W is a dedicated prey who seeks to feed their predator friends, and someone who finds joy in serving themselves as food for others. They often give their predator complete control, however long they stay they'll be content to sit back and relax deep inside of their friend's body. They perhaps might see themselves as their friend's personal snack or chew toy, to be taken and used whenever they want to play. They can sometimes be mistaken for SVPX 'lovers', but their interests come more from their Sensual trait; the sensation of being eaten is above the sexual exhilaration for these sensitive types. \n";
       break;
     case "SEPX-W":
       title2.innerText = "The Devotee";
+            textareaheader.innerText = "'Use me however you want.'"
       textarea.innerText = typeDesc;
-      textarea2.innerText = "As willing prey: This prey might see themselves as an edible sex toy, to be used to pleasure their lover whenever they need it. They are willing to give themselves to their lover to sate their sexual desires, up to and including being processed on any level. Though, being emotional types, they'd ideally hope it wouldn't be a permanent act so that they can continue to please their partner. \n";
+      textarea2.innerText = "While the SEPN-W finds comfort in serving their predator, the SEPX-W finds arousal in being controlled and used by their predator. They might see themselves as an edible sex toy, to be used to pleasure their lover, master or friends whenever they need it. They are willing to give themselves to their lover to sate their sexual desires, up to and including being processed on various levels. Though, being Emotional types, they yearn for teasing and compliments from their predator, as well as building long-term connections. This leads them to having smaller pools of predators to choose from than their SVPX companions, but their relationships are more intimate for it. \n";
       break;
 
       /* UNWILLING PREY DESCRIPTIONS */
 
     case "IVAN-U":
       title2.innerText = "The Challenger";
+      textareaheader.innerText = "'I'm not going down without a fight!'"
       textarea.innerText = typeDesc;
       textarea2.innerText = "You've been in enough maws to know how to break out of them. Despite multiple escapes, predators keep thinking they can devour you. Maybe some of them think it's a challenge to be able to keep such an active prey down? In any case, the idea that there are people who want to get eaten confuses you greatly, you would never allow yourself to be prey and will punch your way out of anyone who forces it on you. \n";
       break;
     case "IVAX-U":
       title2.innerText = "The Evasive";
+      textareaheader.innerText = "'Wh-what? Of course I don't like it! Let me go!'"
       textarea.innerText = typeDesc;
       textarea2.innerText = "You put up a fight at first, but now that you're in a gut your heart begins to flutter in the most peculiar way... are you turned on? why would you feel aroused at a time like this? The IVAX-U experience some sexual excitement at their situation, but refuse to admit it. Better to keep struggling than stop just because you're horny. \n";
       break;
     case "IVPN-U":
       title2.innerText = "The Fatalist";
+      textareaheader.innerText = "'Ugh, fine...'"
       textarea.innerText = typeDesc;
-      textarea2.innerText = "You fought for a little while, but decided to stop. Maybe you had given up, or maybe you were just conversing your strength. Passive prey rarely last long against the stomach walls, though perhaps this tactic might bore your predator into letting you go? ...one can only hope. \n";
+      textarea2.innerText = "You fought for a little while, but decided to stop. Maybe you had given up, or maybe you were just conserving your strength. The IVPN knows the nature of their universe means that their chances of being eaten by a predator are high, and so when the time comes they put up the bare minimum of a fight. Passive prey rarely last long against the stomach walls, though perhaps this tactic might bore your predator into letting you go? ...one can only hope. \n";
       break;
     case "IVPX-U":
       title2.innerText = "The Swayed";
+      textareaheader.innerText = "'It's actually not so bad when you get used to it...'"
       textarea.innerText = typeDesc;
-      textarea2.innerText = "The IVPX-U is a complicated prey. They know how dangerous being eaten is, how disgusting the innards of a predator are likely to be, but when they are met with this fate they give in. Once the predator begins the process of eating them they find themselves stimulated, having a tongue tasting them is oddly arousing. Perhaps in this sense they aren't as unwilling as they first thought  \n";
+      textarea2.innerText = "The IVPX-U is a complicated prey. They know how dangerous being eaten is, how disgusting the innards of a predator are likely to be, but when they are met with this fate they give in. Once the predator begins the process of eating them they find themselves stimulated, having a tongue tasting them is oddly arousing. Perhaps in this sense they aren't as unwilling as they first thought.  \n";
       break;
     case "IEAN-U":
       title2.innerText = "The Remorseful";
+      textareaheader.innerText = "'You can't do this to me!'"
       textarea.innerText = typeDesc;
-      textarea2.innerText = "IEAN-U are melancholic prey. While their willing and predator counterparts find purpose and meaning in the activity, the IEAN-U finds only regret for all the things they never accomplished. They will fight to free themselves and complete their unfinished business. \n";
+      textarea2.innerText = "IEAN-U are melancholic prey. While their willing and predator counterparts find purpose and meaning in the activity, the IEAN-U finds only regret for all the things they never accomplished. They will fight to free themselves and complete their unfinished business. Their E trait is often the strongest weapon in their arsenal, convincing some E, and especially SE, predators to let them go. \n";
       break;
     case "IEAX-U":
       title2.innerText = "The Squirmer";
+      textareaheader.innerText = "'Aaah, no, let me go!'"
       textarea.innerText = typeDesc;
       textarea2.innerText = "The IEAX-U are easily flustered prey. While their Individual nature means they try to avoid being eaten, they can't help but take a second glance when a predator opens their jaws before them. They cover up their arousal through firm struggles and protesting that they aren't prey, often coaxing predators into teasing them more. A predator who wants to get the most out of an IEAX-U prey should focus on teasing them about their fate, telling them how good they tasted and, above all else, taunting them about how much they IEAX-U prey is enjoying themselves. A combination of these three strategies will guarantee them a prey who squirms all night long. \n";
       break;
     case "IEPN-U":
       title2.innerText = "The Tragic";
+      textareaheader.innerText = "'There really wasn't any escape, was there?'"
       textarea.innerText = typeDesc;
       textarea2.innerText = "All hope was lost the moment a predator laid eyes on them. Trapped with a single gulp, stifled by a burp, now nothing more than a meal. The IEPN-U find themselves in situations outside of their control where they are devoured, and often give into their fate immediately. While an IVPN-U would focus more on the concerns about being digested, the IEPN-U is more worried about how people will react when they find out they've been devoured. They are Passive prey, often giving up after a single attempt at escaping or easily silenced by a pat. \n";
       break;
       
-      /* Descriptions and Flavour Text To Be Added */
-
     case "IEPX-U":
       title2.innerText = "The Indecisive";
+      textareaheader.innerText = "'This is kind of hot actually, erf, so long as I don't stay for too long...'"
       textarea.innerText = typeDesc;
-      textarea2.innerText = "As unwilling prey: This prey might have little to no desire to be eaten, but might be too easily aroused or similar that sexual teasing might override whatever resistance they're able to put forward. The IEPX might come to regret their decision once their predator's body has begun to process them or they're otherwise trapped indefinitely. Or, alternatively, they might be willing afterwards, especially if they'll get to live to see this act again. \n";
+      textarea2.innerText = "The IEPX-U can often be confused for their willing counterpart, though they are much more likely to deny their secret desire to be eaten. Some might have little to no desire to be eaten, but might be too easily aroused that sexual teasing overrides whatever resistance they're able to put forward. The IEPX might come to regret their decision once their predator's body has begun to process them or they're otherwise trapped indefinitely. Or, alternatively, they might be willing afterwards, especially if they'll get to live to see this act again. \n";
       break;
     case "SVAN-U":
       title2.innerText = "The Feeder";
+      textareaheader.innerText = "'H-ha, here's another prey! Just don't eat me, alright? Haha...'"
       textarea.innerText = typeDesc;
-      textarea2.innerText = "As unwilling prey: The typical SVAN prey has predator friends they hang around. They skirt the border of being eaten through socialising with predators and convincing them that they're a better compainion than a meal. They often end up as feeders or find prey for predators to avoid ending up as prey themselves, but they are constantly aware that the next stomach they hear growl could be for them. \n";
+      textarea2.innerText = "The typical SVAN-U prey has predator friends they hang around. They skirt the border of being eaten through socialising with predators and convincing them that they're a better compainion than a meal. They often end up as feeders or find prey for predators to avoid ending up as prey themselves, but they are constantly aware that the next stomach they hear growl could be for them. They are often active strugglers when their time finally comes to be devoured. \n";
       break;
     case "SVAX-U":
       title2.innerText = "The Voyeur";
+      textareaheader.innerText = "'Glad it's them and not me.... yep. Glad.'"
       textarea.innerText = typeDesc;
-      textarea2.innerText = "As unwilling prey: SVAX unwilling prey are often onlookers who find strange arousal out of watching vore but fearing being prey. They might be feeders for their predator friends, follow social media trends about predators eating prey, or just stop and watch when someone else is being devoured. Their Active trait encourages them to get closer and closer to the action, until finally they get a bit too close. \n";
+      textarea2.innerText = "SVAX-U prey are often onlookers who find strange arousal out of watching vore but fearing being prey. They might be feeders for their predator friends, follow social media trends about predators eating prey, or just stop and watch when someone else is being devoured. Their Active trait encourages them to get closer and closer to the action, until finally they get a bit too close. At this point their arousal turns against them, leaving them wondering how much they can experience before they reach a point of no return. \n";
       break;
     case "SVPN-U":
       title2.innerText = "The Gourmet";
+      textareaheader.innerText = "'I hope you enjoyed that at least, even if it's gross in here.'"
       textarea.innerText = typeDesc;
-      textarea2.innerText = "As unwilling prey: This prey probably doesn't want to be eaten, but if approached, they are likely to give in and let the predator have their way. Unlike IVPN, however, this prey might make sure that their predator enjoys them at the very least as, if they must be food, they at least should be a memorable meal. \n";
+      textarea2.innerText = "The SVPN-U doesn't want to be eaten, but if approached, they are likely to give in and let the predator have their way. Unlike IVPN, however, this prey might make sure that their predator enjoys them at the very least as, if they must be food, they at least should be a memorable meal. While they wouldn't admit it, they do appreciate being complimented on their flavour or how filling they were after being eaten. \n";
       break;
     case "SVPX-U":
       title2.innerText = "The Offering";
+      textareaheader.innerText = "'Mmh, well if this is happening I might as well try to enjoy it.'"
       textarea.innerText = typeDesc;
-      textarea2.innerText = "As unwilling prey: Also similar to the SVPN, but, although they do not wish to be food, they may sexually please their predator to the best of their ability before they consign themselves to their fate of being inside or part of their predator. \n";
+      textarea2.innerText = "The SVPX-U is similar to the SVPN in almost every way, although their relationship with being devoured differs on their reaction to the outcome. While the SVPN hopes they're at least a filling or delicious meal, the SVPX hopes to find some enjoyment in the confines of the stomach. They often find odd arousal in the predator dominating them, and as such act on it when they're out of view in the predator's stomach. \n";
       break;
     case "SEAN-U":
       title2.innerText = "The Humiliated";
+      textareaheader.innerText = "'H-how dare you!'"
       textarea.innerText = typeDesc;
-      textarea2.innerText = "SEAN-U and SEAX-U: I see this as a parallel to the IEA_-U type with a different twist. An IEA has an Individual fear of the Emotional consequences of death (i.e., losing out on having a future) while an SEA has the more Social (Reciprocal?) fear of being held captive. \"I am nobody's dinner!\" \n ";
+      textarea2.innerText = "The SEAN-U prey finds that their biggest emotional response to being eaten is humiliation. Their Shared nature means that they're easily teased by a predator, and their Emotional trait leads them to focus more on the predator's words than the stomach walls around them. Teasing leaves them quickly kicking up a frenzy to escape while their pride is still intact. \n ";
       break;
     case "SEAX-U":
       title2.innerText = "The Closeted";
+      textareaheader.innerText = "'No I'm not blushing, it's just really hot in here!'"
       textarea.innerText = typeDesc;
-      textarea2.innerText = "SEAN-U and SEAX-U: I see this as a parallel to the IEA_-U type with a different twist. An IEA has an Individual fear of the Emotional consequences of death (i.e., losing out on having a future) while an SEA has the more Social (Reciprocal?) fear of being held captive. \"I am nobody's plaything!\" \n ";
+      textarea2.innerText = "The SEAX-U prey is close to their SEAN-U counterpart; vulnerable to teasing and goading from predators, especially those they are close to. However unlikely the Sensation-focused SEAN, the SEAX-U finds some arousal in the predator's teasing, often leading them to squirm less out of humliation and more out of trying to hide their arousal at the predator's domination over them. \n ";
       break;
     case "SEPN-U":
       title2.innerText = "The Trusting";
+      textareaheader.innerText = "'Well, okay... but let me out the second I tell you to, alright?'"
       textarea.innerText = typeDesc;
-      textarea2.innerText = "As unwilling prey: This is more of the reluctant prey who can be coaxed into going inside of someone they trust. They might not want it, but if their companion really does, they will give in and give them the enjoyment they desire. Most likely to need to be convinced it's safe, but they aren't above more fatal outcomes if that's what their friend truly wants. \n";
+      textarea2.innerText = "The SEPN-U is a reluctant prey who can be coaxed into going inside of someone they trust. They might not want it, but if their companion really does, they will give in and give them the enjoyment they desire. Most will want to get reassurance from their predator that its safe, but despite their desire to be in control they'll often slip into a passive role if their predator begins to act more dominantly. These prey can eventually be worked into willing with the right time and predator, though they need to watch themselves around manipulative IE predator types! \n";
       break;
     case "SEPX-U":
       title2.innerText = "The Toy ";
+      textareaheader.innerText = "'So long as you're enjoying it, I guess it's okay.'"
       textarea.innerText = typeDesc;
-      textarea2.innerText = "As unwilling prey: Much like the SEPN prey, this one is a bit of a reluctant toy. They don't want to be used to sate their lover's sexual desires, but making sure they are happy is ultimately more important, so they get coaxed into the act. \n";
+      textarea2.innerText = "Much like the SEPN-U, the SEPX-U is a bit of a reluctant toy. They don't find the same enjoyment in being eaten as their partner does in eating them, but their relationship with the predator is important enough they can often bypass this in order to sate their partner's desires. This level of connection with their predator from the SE traits, combined with their passive approach from the P trait, means that they can often find arousal in the dominance aspect of being eaten, though they still wouldn't consider it to be something they personally enjoy. \n";
       break;
   }
 
   // Build the Traits Description
   
- // let iPerc = ((i+s)/100)*i;
- // let sPerc = ((i+s)/100)*s;
- // let vPerc = ((i+s)/100)*i;
- // let ePerc = 0;
- // let aPerc = 0;
- // let pPerc = 0;
- // let xPerc = 0;
- // let nPerc = 0;
+// PERCENTAGE CALCULATOR
+let iPerc = ((I+S)/100)*I;
+let sPerc = ((I+S)/100)*S;
+let vPerc = ((V+E)/100)*V;
+let ePerc = ((V+E)/100)*E;
+let aPerc = ((A+P)/100)*A;
+let pPerc = ((A+P)/100)*P;
+let xPerc = ((X+N)/100)*X;
+let nPerc = ((X+N)/100)*N;
   
   
 
@@ -761,5 +810,10 @@ function descriptions() {
     xsDesc = "SeNsual (N) characters see vore as an act of plain pleasure, satisfaction, or perhaps of pure hunger. They don't associate the sexual element with it directly like Sexual types do- although this doesn't mean they can't still have a sexually involved vore experience now and then. Sensual predators can have all sorts of motivations depending on their other personality aspects, but generally, they do vore for food, satisfaction, bonding or fun- and not as an act of lust in and of itself. Sensual prey likewise enjoy the experience without the need for eroticism- or perhaps they're just some unfortunate unwilling prey-type, one that's pure enough not to take guilty pleasure in being devoured. \n";
   }
 
-  textarea3.innerText = isDesc + "\n" + veDesc + "\n" + apDesc + "\n" + xsDesc;
+  textarea3.innerText = isDesc + "\n" + veDesc + "\n" + apDesc + "\n" + xsDesc
+  + "\n" + "Scores:" + "\n" 
+  + "Individual: " + I + " || Social: " + S + "\n" 
+  + "Visceral: " + V + " || Emotional: " + E + "\n"
+  + "Active: " + A + " || Passive: " + P + "\n"
+  + "SeXual: " + X + " || SeNual: " + N + "\n";
 }
