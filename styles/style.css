@@ -1,2 +1,87 @@
 /* Styles go here */
 
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(221, 216, 202);
+}
+
+.predbody {
+    background-color: rgb(224, 95, 95);
+}
+
+h1 {
+    font-family: "Kanit", sans-serif;
+}
+
+h3 {
+    font-family: "Kanit", sans-serif;
+}
+
+p {
+    font-size: 18px;
+}
+
+.pick-button-container {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pick-pred {
+    width: 150px;
+    height: auto;
+    font-family: "Kanit", sans-serif;
+    font-size: larger;
+    font-weight: bold;
+    background-color: rgb(224, 172, 95);
+    border: 3px solid rgb(218, 154, 59);
+    border-radius: 15px;
+    box-shadow: 3px 3px 12px black;
+}
+
+.pick-wprey {
+    width: 150px;
+    height: auto;
+    font-family: "Kanit", sans-serif;
+    font-size: larger;
+    font-weight: bold;
+    background-color: rgb(137, 226, 144);
+    border: 3px solid rgb(87, 211, 97);
+    border-radius: 15px;
+    box-shadow: 3px 3px 12px black;
+}
+
+.pick-uprey {
+    width: 150px;
+    height: auto;
+    font-family: "Kanit", sans-serif;
+    font-size: larger;
+    font-weight: bold;
+    background-color: rgb(199, 130, 226);
+    border: 3px solid rgb(184, 118, 211);
+    border-radius: 15px;
+    box-shadow: 3px 3px 12px black;
+}
+
+.testbuttons-container {
+    display: flex;
+    width: 100%;
+    max-width: 450px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.testbuttons {
+    width: fit-content;
+    height: auto;
+    font-family: "Kanit", sans-serif;
+    background-color: rgb(218, 218, 218);
+    border-radius: 15px;
+    box-shadow: 5px 5px 17px black;
+}
