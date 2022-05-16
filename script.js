@@ -822,7 +822,7 @@ function descriptions() {
         "'H-ha, here's another prey! Just don't eat me, alright? Haha...'";
       textarea.innerText = typeDesc;
       textarea2.innerText =
-        "The typical SVAN-U prey has predator friends they hang around. They skirt the border of being eaten through socialising with predators and convincing them that they're a better compainion than a meal. They often end up as feeders or find prey for predators to avoid ending up as prey themselves, but they are constantly aware that the next stomach they hear growl could be for them. They are often active strugglers when their time finally comes to be devoured. \n";
+        "The typical SVAN-U prey has predator friends they hang around. They skirt the border of being eaten through socialising with predators and convincing them that they're a better companion than a meal. They often end up as feeders or find prey for predators to avoid ending up as prey themselves, but they are constantly aware that the next stomach they hear growl could be for them. They are often active strugglers when their time finally comes to be devoured. \n";
       break;
     case 'SVAX-U':
       title2.innerText = 'The Voyeur';
