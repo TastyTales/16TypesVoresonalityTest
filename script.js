@@ -21,7 +21,18 @@ var predTest = document.getElementById('pred-button'),
   body = document.body,
   progressbar = document.getElementById('progressbar'),
   progressbarfill = document.getElementById('progress-bar-full'),
-  scorestable = document.getElementById('scores-table');
+  scorestable = document.getElementById('scores-table'),
+
+  scoreI = document.getElementById('score-individual'),
+  scoreS = document.getElementById('score-shared'),
+  scoreV = document.getElementById('score-visceral'),
+  scoreE = document.getElementById('score-emotional'),
+  scoreA = document.getElementById('score-active'),
+  scoreP = document.getElementById('score-passive'),
+  scoreX = document.getElementById('score-sexual'),
+  scoreN = document.getElementById('score-sensual');
+
+  
 
 // Scores  
 var I = 0,
@@ -279,7 +290,7 @@ function resetTest() {
   textarea2.innerText = "";
   textarea3.innerText = "";
   textarea4.innerText = "";
- resetbtn.style.display = "block";
+ resetbtn.style.display = "none";
   document.body.classList.remove('predbody');
     document.body.classList.remove('wpreybody');
       document.body.classList.remove('upreybody');
@@ -840,5 +851,14 @@ let nPerc = ((X+N)/100)*N;
   }
 
   textarea3.innerHTML = isDesc + "<br /> <br />" + veDesc + "<br /> <br />" + apDesc + "<br /> <br />" + xsDesc;
+
+  scoreI.innerText = I;
+  scoreS.innerText = S;
+  scoreV.innerText = V;
+  scoreE.innerText = E;
+  scoreA.innerText = A;
+  scoreP.innerText = P;
+  scoreX.innerText = X;
+  scoreN.innerText = N;
 
 }
