@@ -32,7 +32,7 @@ var predTest = document.getElementById('pred-button'),
   scoreX = document.getElementById('score-sexual'),
   scoreN = document.getElementById('score-sensual');
 
-  
+  textarea.innerText = "Created by TastyTales and Smuxray, with contributions from Eka's Portal users. This test is based off of the Myers-Briggs Personality Indicator, and is designed to show you what kind of predator or prey you are using one of 16 indicators. It is best to answer these questions 'In Character' for the character you want to get a result for. However, you can also answer as yourself! \n \n Please note that this test is meant to be taken for fun, and is still in its development stage. Feedback is appreciated, send your comments to @_TastyTales \n\n CSS by @mikhailchip \n \n Select which test to take.";
 
 // Scores  
 var I = 0,
@@ -283,9 +283,9 @@ function resetScores() {
 function resetTest() {
   hideOptions();
   showType();
-  title.innerText = "Voresonalresetity Test";
+  title.innerText = "Voresonality Test";
   title2.innerText = "Find out your Vore Indicator!"
-  textarea.innerText = "Created by TastyTales and Smuxray, with contributions from Eka's Portal users. This test is based off of the Myers-Briggs Personality Indicator, and is designed to show you what kind of predator or prey you are using one of 16 indicators. It is best to answer these questions 'In Character' for the character you want to get a result for. However, you can also answer as yourself! \n \n Please note that this test is meant to be taken for fun, and is still in its development stage. Feedback is appreciated, send your comments to @_TastyTales \n CSS by @mikhailchip \n \n Select which test to take.";
+  textarea.innerText = "Created by TastyTales and Smuxray, with contributions from Eka's Portal users. This test is based off of the Myers-Briggs Personality Indicator, and is designed to show you what kind of predator or prey you are using one of 16 indicators. It is best to answer these questions 'In Character' for the character you want to get a result for. However, you can also answer as yourself! \n \n Please note that this test is meant to be taken for fun, and is still in its development stage. Feedback is appreciated, send your comments to @_TastyTales \n\n CSS by @mikhailchip \n \n Select which test to take.";
   textareaheader.innerText = "";
   textarea2.innerText = "";
   textarea3.innerText = "";
