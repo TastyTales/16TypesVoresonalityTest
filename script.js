@@ -20,7 +20,8 @@ var predTest = document.getElementById('pred-button'),
   resetbtn = document.getElementById('reset-button'),
   body = document.body,
   progressbar = document.getElementById('progressbar'),
-  progressbarfill = document.getElementById('progress-bar-full');
+  progressbarfill = document.getElementById('progress-bar-full'),
+  scorestable = document.getElementById('scores-table');
 
 // Scores  
 var I = 0,
@@ -219,12 +220,14 @@ var typeDesc = "";
 
 // Functions used to hide buttons when not in use, and show them when they are.
 
-resetbtn.style.display = "block";
+scorestable.style.display = 'none';
+resetbtn.style.display = "none";
 
 function hideType() {
   predTest.style.display = 'none';
   wpreyTest.style.display = 'none';
   upreyTest.style.display = 'none';
+ 
 }
 
 function showType() {
@@ -269,7 +272,7 @@ function resetScores() {
 function resetTest() {
   hideOptions();
   showType();
-  title.innerText = "Voresonality Test";
+  title.innerText = "Voresonalresetity Test";
   title2.innerText = "Find out your Vore Indicator!"
   textarea.innerText = "Created by TastyTales and Smuxray, with contributions from Eka's Portal users. This test is based off of the Myers-Briggs Personality Indicator, and is designed to show you what kind of predator or prey you are using one of 16 indicators. It is best to answer these questions 'In Character' for the character you want to get a result for. However, you can also answer as yourself! \n \n Please note that this test is meant to be taken for fun, and is still in its development stage. Feedback is appreciated, send your comments to @_TastyTales \n CSS by @mikhailchip \n \n Select which test to take.";
   textareaheader.innerText = "";
@@ -283,6 +286,7 @@ function resetTest() {
   document.getElementById("progress-bar").classList.remove("progress-bar");
   document.getElementById("progress-bar-full").classList.remove("progress-bar-full");
   progressbarfill.style.width = 0;
+  scorestable.style.display = 'none';
 }
 
 resetbtn.addEventListener('click', function() {
@@ -332,6 +336,7 @@ function finalResult() {
   title2.innerText = "Your type is: " + type;
   //  textarea.innerText = typeDesc;
   descriptions();
+  scorestable.style.display = 'block';
 }
 
 function question() {
@@ -836,9 +841,4 @@ let nPerc = ((X+N)/100)*N;
 
   textarea3.innerHTML = isDesc + "<br /> <br />" + veDesc + "<br /> <br />" + apDesc + "<br /> <br />" + xsDesc;
 
-  textarea4.innerText =  "Scores:" + "\n" 
-  + "Individual: " + I + " || Shared: " + S + "\n" 
-  + "Visceral: " + V + " || Emotional: " + E + "\n"
-  + "Active: " + A + " || Passive: " + P + "\n"
-  + "SeXual: " + X + " || SeNsual: " + N + "\n";
 }
