@@ -16,6 +16,7 @@ var predTest = document.getElementById('pred-button'),
   textareaheader = document.getElementById('textarea_header'),
   textarea2 = document.getElementById('textarea2'),
   textarea3 = document.getElementById('textarea3'),
+  textarea4 = document.getElementById('textarea4'),
   resetbtn = document.getElementById('reset-button');
 
 // Scores  
@@ -271,6 +272,7 @@ function resetTest() {
   textareaheader.innerText = "";
   textarea2.innerText = "";
   textarea3.innerText = "";
+  textarea4.innerText = "";
   resetbtn.style.display = "none";
 }
 
@@ -810,10 +812,11 @@ let nPerc = ((X+N)/100)*N;
     xsDesc = "SeNsual (N) characters see vore as an act of plain pleasure, satisfaction, or perhaps of pure hunger. They don't associate the sexual element with it directly like Sexual types do- although this doesn't mean they can't still have a sexually involved vore experience now and then. Sensual predators can have all sorts of motivations depending on their other personality aspects, but generally, they do vore for food, satisfaction, bonding or fun- and not as an act of lust in and of itself. Sensual prey likewise enjoy the experience without the need for eroticism- or perhaps they're just some unfortunate unwilling prey-type, one that's pure enough not to take guilty pleasure in being devoured. \n";
   }
 
-  textarea3.innerText = isDesc + "\n" + veDesc + "\n" + apDesc + "\n" + xsDesc
-  + "\n" + "Scores:" + "\n" 
-  + "Individual: " + I + " || Shared: " + S + "\n" 
+  textarea3.innerText = isDesc + "\n" + veDesc + "\n" + apDesc + "\n" + xsDesc;
+
+  textarea4.innerText =  "Scores:" + "\n" 
+  + "Individual: " + I + " || Social: " + S + "\n" 
   + "Visceral: " + V + " || Emotional: " + E + "\n"
   + "Active: " + A + " || Passive: " + P + "\n"
-  + "SeXual: " + X + " || SeNsual: " + N + "\n";
+  + "SeXual: " + X + " || SeNual: " + N + "\n";
 }
