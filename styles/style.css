@@ -114,10 +114,12 @@ p {
 }
 
 table {
-    width: 400px;
+    width: -moz-fit-content;
+    width: fit-content;
     margin: 2rem;
     font-size: 20px;
     font-family: "Kanit", sans-serif;
+
 }
 
 caption {
@@ -151,18 +153,22 @@ tr {
 
 tr td:first-of-type {
     width: 40%;
+    padding: 0 2rem;
 }
 
 tr td:last-of-type {
     width: 40%;
+    padding: 0 2rem;
 }
 
 tr td:nth-of-type(2) {
     width: 10%;
+    padding: 0 .5rem;
 }
 
 tr td:nth-of-type(3) {
     width: 10%;
+    padding: 0 .5rem;
 }
 
 .reset-button {
