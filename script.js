@@ -30,7 +30,7 @@ var predTest = document.getElementById('pred-button'),
   scoreN = document.getElementById('score-sensual');
 
 textarea.innerText =
-  "Created by TastyTales and Smuxray, with contributions from Eka's Portal users. This test is based off of the Myers-Briggs Personality Indicator, and is designed to show you what kind of predator or prey you are using one of 16 indicators. It is best to answer these questions 'In Character' for the character you want to get a result for. However, you can also answer as yourself! \n \n Please note that this test is meant to be taken for fun, and is still in its development stage. Feedback is appreciated, send your comments to @_TastyTales \n\n CSS by @mikhailchip \n \n Select which test to take.";
+  "Created by TastyTales and Smuxray, with contributions from Eka's Portal users. This test is based off of the Myers-Briggs Personality Indicator, and is designed to show you what kind of predator or prey you are using one of 16 indicators. It is best to answer these questions 'In Character' for the character you want to get a result for. However, you can also answer as yourself! \n \n Please note that this test is meant to be taken for fun, and is still in its development stage. Feedback is appreciated, send your comments to @_TastyTales \n \n CSS by @mikhailchip \n \n Thanks to @Grey_krow for his JavaScript help! \n \n Select which test to take.";
 
 // Scores
 var I = 0,
@@ -42,184 +42,1276 @@ var I = 0,
   X = 0,
   N = 0;
 
+// upreyStatements = [
+//     // Individual
+//     {question: 'I roll my eyes at predators who tell me how hungry they are.', answers: [{type:'I', value: 3},{type:'I', value: 1},{type:null, value: null},{type:'S', value: 1},{type:'S', value: 3}]},
+
 //Test Statements
 var predStatements = [
-    /* Individual */
-    'The feelings of my prey matter little to me',
-    'My prey should be content that I have deemed them worthy of being my food.',
-    'If I take my time with my prey, it is entirely for my own satisfaction.',
-    'Struggling prey need to learn their place.',
-    "Prey who shout about how they don't want to be eaten are only proving they deserve to be.",
 
-    /* Shared */
-    'I would stop devouring my prey if they were uncomfortable.',
-    'I listen to what my prey wants and try to satisfy both their needs and my own.',
-    'I prefer my prey to be willing; if they’re not, I might try to tempt them into it.',
-    'I try to find ways to make my prey feel comfortable with the process.',
-    'I would feel regret if I digested an unwilling prey.',
+    /* PRED - INDIVIDUAL */
+    {
+      question: 'The feelings of my prey matter little to me',
+      answers: [
+        { type: 'S', value: 3 },
+        { type: 'S', value: 1 },
+        { type: null, value: null },
+        { type: 'I', value: 1 },
+        { type: 'I', value: 3 },
+      ],
+    },
 
-    /* Visceral */
-    'I eat primarily to satisfy my hunger.',
-    'I’m often too distracted by the feeling of my prey’s muffled voice to understand what they’re saying.',
-    'In the end, food is food.',
-    "I couldn't hold a conversation with my future prey; I'd be too busy thinking about how good they'll feel sliding down my gullet!",
-    'Devouring prey makes me feel stronger.',
+    {
+      question:
+        'My prey should be content that I have deemed them worthy of being my food.',
+      answers: [
+        { type: 'S', value: 3 },
+        { type: 'S', value: 1 },
+        { type: null, value: null },
+        { type: 'I', value: 1 },
+        { type: 'I', value: 3 },
+      ],
+    },
 
-    /* Emotional */
-    "Swallowing prey isn't as satisfying if I don't get a reaction out of them.",
-    'I like the idea of holding someone else inside me more than how my prey might taste or feel.',
-    'I never forget that my prey are thinking, feeling beings.',
-    "I have fond memories of all the prey I've eaten before.",
-    "I especially enjoy eating people I'm close to.",
+    {
+      question:
+        'If I take my time with my prey, it is entirely for my own satisfaction.',
+      answers: [
+        { type: 'S', value: 3 },
+        { type: 'S', value: 1 },
+        { type: null, value: null },
+        { type: 'I', value: 1 },
+        { type: 'I', value: 3 },
+      ],
+    },
 
-    /* Active */
-    'I often go on the “hunt” for prey, be it in the wilds or in public.',
-    "If my prey didn't want to be eaten, they should have tried harder to escape.",
-    'When I see someone tasty, I immediately start thinking of ways to go about devouring them.',
-    "I'm not afraid to get rough with my prey if I need to.",
-    'I enjoy the thrill of the chase.',
+    {
+      question: 'Struggling prey need to learn their place.',
+      answers: [
+        { type: 'S', value: 3 },
+        { type: 'S', value: 1 },
+        { type: null, value: null },
+        { type: 'I', value: 1 },
+        { type: 'I', value: 3 },
+      ],
+    },
 
-    /* Passive */
-    'I wait for prey to come to me, rather than seeking them out.',
-    "I love meeting potential prey for a drink and a chat before 'the main course.'",
-    'I get nervous about expressing my desire to eat someone.',
-    'I prefer it when my prey makes the first move.',
-    'I get flustered at the thought of having a full belly.',
+    {
+      question:
+        "Prey who shout about how they don't want to be eaten are only proving they deserve to be.",
+      answers: [
+        { type: 'S', value: 3 },
+        { type: 'S', value: 1 },
+        { type: null, value: null },
+        { type: 'I', value: 1 },
+        { type: 'I', value: 3 },
+      ],
+    },
 
-    /* Sexual */
-    'The feeling of a prey disappearing into my gut arouses me.',
-    "I'll sometimes grind against my squirming gut after eating a prey.",
-    "I continue to tease my prey long after they're gone.",
-    "I like the weight from my prey to be added to my more 'seductive' assets.",
-    "I eat prey because it's sexy.",
+    /* PRED - SHARED */
+    {
+      question: 'I would stop devouring my prey if they were uncomfortable.',
+      answers: [
+        { type: 'I', value: 3 },
+        { type: 'I', value: 1 },
+        { type: null, value: null },
+        { type: 'S', value: 1 },
+        { type: 'S', value: 3 },
+      ],
+    },
 
-    /* Sensual */
-    'Holding prey in my stomach is deeply comforting.',
-    'Sometimes I carress my belly for hours, thinking of the prey inside.',
-    'I love falling into a food coma after eating prey.',
-    'Vore doesn’t need to be sexually arousing to be an enjoyable experience.',
-    "I eat prey because it's fun.",
-  ],
-  wpreyStatements = [
-    // Individual
-    'My predator should accommodate for my tastes.',
-    'I would forcefeed myself to someone if they were reluctant to eat me.',
-    'I sometimes catch predators off guard with my willingness',
-    'I sometimes get jealous of other prey.',
-    "I disdain predators who can't appreciate how delicious I am.",
+    {
+      question:
+        'I listen to what my prey wants and try to satisfy both their needs and my own.',
+      answers: [
+        { type: 'I', value: 3 },
+        { type: 'I', value: 1 },
+        { type: null, value: null },
+        { type: 'S', value: 1 },
+        { type: 'S', value: 3 },
+      ],
+    },
 
-    // Shared
-    'I would feel comfortable sharing a stomach with another prey.',
-    'I enjoy hearing sounds of approval from my predator.',
-    'I love helping a predator practice devouring people, myself included.',
-    "I'd do everything I could to make myself easier to swallow for a predator.",
-    'I would want my predator to treat me with the same respect I give them.',
+    {
+      question:
+        'I prefer my prey to be willing; if they’re not, I might try to tempt them into it.',
+      answers: [
+        { type: 'I', value: 3 },
+        { type: 'I', value: 1 },
+        { type: null, value: null },
+        { type: 'S', value: 1 },
+        { type: 'S', value: 3 },
+      ],
+    },
 
-    // Visceral
-    "I'd want my predator to treat me like food, and nothing more.",
-    "I'd gladly share a stomach with regular food.",
-    'The sensation of being devoured is the most important part.',
-    "I wouldn't mind being eaten by a total stranger.",
-    "I'd rather my predator rub me from the outside than speak to me when I'm in their belly",
+    {
+      question:
+        'I try to find ways to make my prey feel comfortable with the process.',
+      answers: [
+        { type: 'I', value: 3 },
+        { type: 'I', value: 1 },
+        { type: null, value: null },
+        { type: 'S', value: 1 },
+        { type: 'S', value: 3 },
+      ],
+    },
 
-    // Emotional
-    "I want to feel like I'm someone special to my predator.",
-    "Listening to my predator's heartbeat from the inside soothes me.",
-    'An emotional connection to my predator is paramount in vore.',
-    "I'd rather be eaten by my friends than strangers.",
-    "I'd want to chat with my predator while I was in their stomach",
+    {
+      question: 'I would feel regret if I digested an unwilling prey.',
+      answers: [
+        { type: 'I', value: 3 },
+        { type: 'I', value: 1 },
+        { type: null, value: null },
+        { type: 'S', value: 1 },
+        { type: 'S', value: 3 },
+      ],
+    },
 
-    // Active
-    'I make myself a target to predators however I can.',
-    'When I see a predator yawn, I have to hold myself back from diving right in',
-    "I love struggling and rubbing the walls when I'm in a gut.",
-    'I put myself in perilous situations on the prospect of being eaten.',
-    'I like to leave my fate up to games of chance.',
+    /* PRED - VISCERAL */
+    {
+      question: 'I eat primarily to satisfy my hunger.',
+      answers: [
+        { type: 'E', value: 3 },
+        { type: 'E', value: 1 },
+        { type: null, value: null },
+        { type: 'V', value: 1 },
+        { type: 'V', value: 3 },
+      ],
+    },
 
-    // Passive
-    "I don't draw attention to myself, waiting for predators to come to me.",
-    'Open maws and big bellies make me flustered.',
-    "I lay back and let the predator do the work when I'm in a stomach.",
-    'I take the safe route wherever I can, but predators find me anyway.',
+    {
+      question:
+        'I’m often too distracted by the feeling of my prey’s muffled voice to understand what they’re saying.',
+      answers: [
+        { type: 'E', value: 3 },
+        { type: 'E', value: 1 },
+        { type: null, value: null },
+        { type: 'V', value: 1 },
+        { type: 'V', value: 3 },
+      ],
+    },
+
+    {
+      question: 'In the end, food is food.',
+      answers: [
+        { type: 'E', value: 3 },
+        { type: 'E', value: 1 },
+        { type: null, value: null },
+        { type: 'V', value: 1 },
+        { type: 'V', value: 3 },
+      ],
+    },
+
+    {
+      question:
+        "I couldn't hold a conversation with my future prey; I'd be too busy thinking about how good they'll feel sliding down my gullet!",
+      answers: [
+        { type: 'E', value: 3 },
+        { type: 'E', value: 1 },
+        { type: null, value: null },
+        { type: 'V', value: 1 },
+        { type: 'V', value: 3 },
+      ],
+    },
+
+    {
+      question: 'Devouring prey makes me feel stronger.',
+      answers: [
+        { type: 'E', value: 3 },
+        { type: 'E', value: 1 },
+        { type: null, value: null },
+        { type: 'V', value: 1 },
+        { type: 'V', value: 3 },
+      ],
+    },
+
+     /* PRED - EMOTIONAL */
+    {
+      question:
+        "Swallowing prey isn't as satisfying if I don't get a reaction out of them.",
+      answers: [
+        { type: 'V', value: 3 },
+        { type: 'V', value: 1 },
+        { type: null, value: null },
+        { type: 'E', value: 1 },
+        { type: 'E', value: 3 },
+      ],
+    },
+
+    {
+      question:
+        'I like the idea of holding someone else inside me more than how my prey might taste or feel.',
+      answers: [
+        { type: 'V', value: 3 },
+        { type: 'V', value: 1 },
+        { type: null, value: null },
+        { type: 'E', value: 1 },
+        { type: 'E', value: 3 },
+      ],
+    },
+
+    {
+      question: 'I never forget that my prey are thinking, feeling beings.',
+      answers: [
+        { type: 'V', value: 3 },
+        { type: 'V', value: 1 },
+        { type: null, value: null },
+        { type: 'E', value: 1 },
+        { type: 'E', value: 3 },
+      ],
+    },
+
+    {
+      question: "I have fond memories of all the prey I've eaten before.",
+      answers: [
+        { type: 'V', value: 3 },
+        { type: 'V', value: 1 },
+        { type: null, value: null },
+        { type: 'E', value: 1 },
+        { type: 'E', value: 3 },
+      ],
+    },
+
+    {
+      question: "I especially enjoy eating people I'm close to.",
+      answers: [
+        { type: 'V', value: 3 },
+        { type: 'V', value: 1 },
+        { type: null, value: null },
+        { type: 'E', value: 1 },
+        { type: 'E', value: 3 },
+      ],
+    },
+
+    /* PRED - ACTIVE */
+    {
+      question:
+        'I often go on the “hunt” for prey, be it in the wilds or in public.',
+      answers: [
+        { type: 'P', value: 3 },
+        { type: 'P', value: 1 },
+        { type: null, value: null },
+        { type: 'A', value: 1 },
+        { type: 'A', value: 3 },
+      ],
+    },
+
+    {
+      question:
+        "If my prey didn't want to be eaten, they should have tried harder to escape.",
+      answers: [
+        { type: 'P', value: 3 },
+        { type: 'P', value: 1 },
+        { type: null, value: null },
+        { type: 'A', value: 1 },
+        { type: 'A', value: 3 },
+      ],
+    },
+
+    {
+      question:
+        'When I see someone tasty, I immediately start thinking of ways to go about devouring them.',
+      answers: [
+        { type: 'P', value: 3 },
+        { type: 'P', value: 1 },
+        { type: null, value: null },
+        { type: 'A', value: 1 },
+        { type: 'A', value: 3 },
+      ],
+    },
+
+    {
+      question: "I'm not afraid to get rough with my prey if I need to.",
+      answers: [
+        { type: 'P', value: 3 },
+        { type: 'P', value: 1 },
+        { type: null, value: null },
+        { type: 'A', value: 1 },
+        { type: 'A', value: 3 },
+      ],
+    },
+
+    {
+      question: 'I enjoy the thrill of the chase.',
+      answers: [
+        { type: 'P', value: 3 },
+        { type: 'P', value: 1 },
+        { type: null, value: null },
+        { type: 'A', value: 1 },
+        { type: 'A', value: 3 },
+      ],
+    },
+
+    /* PRED - PASSIVE */
+    {
+      question: 'I wait for prey to come to me, rather than seeking them out.',
+      answers: [
+        { type: 'A', value: 3 },
+        { type: 'A', value: 1 },
+        { type: null, value: null },
+        { type: 'P', value: 1 },
+        { type: 'P', value: 3 },
+      ],
+    },
+
+    {
+      question:
+        "I love meeting potential prey for a drink and a chat before 'the main course.'",
+      answers: [
+        { type: 'A', value: 3 },
+        { type: 'A', value: 1 },
+        { type: null, value: null },
+        { type: 'P', value: 1 },
+        { type: 'P', value: 3 },
+      ],
+    },
+
+    {
+      question: 'I get nervous about expressing my desire to eat someone.',
+      answers: [
+        { type: 'A', value: 3 },
+        { type: 'A', value: 1 },
+        { type: null, value: null },
+        { type: 'P', value: 1 },
+        { type: 'P', value: 3 },
+      ],
+    },
+
+    {
+      question: 'I prefer it when my prey makes the first move.',
+      answers: [
+        { type: 'A', value: 3 },
+        { type: 'A', value: 1 },
+        { type: null, value: null },
+        { type: 'P', value: 1 },
+        { type: 'P', value: 3 },
+      ],
+    },
+
+    {
+      question: 'I get flustered at the thought of having a full belly.',
+      answers: [
+        { type: 'A', value: 3 },
+        { type: 'A', value: 1 },
+        { type: null, value: null },
+        { type: 'P', value: 1 },
+        { type: 'P', value: 3 },
+      ],
+    },
+
+    /* PRED - SEXUAL */
+    {
+      question: 'The feeling of a prey disappearing into my gut arouses me.',answers: [
+        { type: 'N', value: 3 },
+        { type: 'N', value: 1 },
+        { type: null, value: null },
+        { type: 'X', value: 1 },
+        { type: 'X', value: 3 },
+      ],
+    },
+
+    {
+      question: "I'll sometimes grind against my squirming gut after eating a prey.",answers: [
+        { type: 'N', value: 3 },
+        { type: 'N', value: 1 },
+        { type: null, value: null },
+        { type: 'X', value: 1 },
+        { type: 'X', value: 3 },
+      ],
+    },
+
+    {
+      question: "I continue to tease my prey long after they're gone.",answers: [
+        { type: 'N', value: 3 },
+        { type: 'N', value: 1 },
+        { type: null, value: null },
+        { type: 'X', value: 1 },
+        { type: 'X', value: 3 },
+      ],
+    },
+
+    {
+      question: "I like the weight from my prey to be added to my more 'seductive' assets.",answers: [
+        { type: 'N', value: 3 },
+        { type: 'N', value: 1 },
+        { type: null, value: null },
+        { type: 'X', value: 1 },
+        { type: 'X', value: 3 },
+      ],
+    },
+
+    {
+      question: "I eat prey because it's sexy.",answers: [
+        { type: 'N', value: 3 },
+        { type: 'N', value: 1 },
+        { type: null, value: null },
+        { type: 'X', value: 1 },
+        { type: 'X', value: 3 },
+      ],
+    },
+
+    /* PRED - SENSUAL */
+    {
+      question: 'Holding prey in my stomach is deeply comforting.',answers: [
+        { type: 'X', value: 3 },
+        { type: 'X', value: 1 },
+        { type: null, value: null },
+        { type: 'N', value: 1 },
+        { type: 'N', value: 3 },
+      ],
+    },
+
+   {
+      question:  'Sometimes I carress my belly for hours, thinking of the prey inside.',answers: [
+        { type: 'X', value: 3 },
+        { type: 'X', value: 1 },
+        { type: null, value: null },
+        { type: 'N', value: 1 },
+        { type: 'N', value: 3 },
+      ],
+    },
+
+   {
+      question:  'I love falling into a food coma after eating prey.',answers: [
+        { type: 'X', value: 3 },
+        { type: 'X', value: 1 },
+        { type: null, value: null },
+        { type: 'N', value: 1 },
+        { type: 'N', value: 3 },
+      ],
+    },
+
+    {
+      question: 'Vore doesn’t need to be sexually arousing to be an enjoyable experience.',answers: [
+        { type: 'X', value: 3 },
+        { type: 'X', value: 1 },
+        { type: null, value: null },
+        { type: 'N', value: 1 },
+        { type: 'N', value: 3 },
+      ],
+    },
+
+    {
+      question: "I eat prey because it's fun.",
+    answers: [
+        { type: 'X', value: 3 },
+        { type: 'X', value: 1 },
+        { type: null, value: null },
+        { type: 'N', value: 1 },
+        { type: 'N', value: 3 },
+      ],
+    },
+],
+
+wpreyStatements = [
+
+    /* W PREY - INDIVIDUAL */
+
+    {
+      question: 'My predator should accommodate for my tastes.',
+        answers: [
+        { type: 'S', value: 3 },
+        { type: 'S', value: 1 },
+        { type: null, value: null },
+        { type: 'I', value: 1 },
+        { type: 'I', value: 3 },
+      ]
+    },
+
+     {
+       question: 'I would forcefeed myself to someone if they were reluctant to eat me.',       answers: [
+         { type: 'S', value: 3 },
+        { type: 'S', value: 1 },
+        { type: null, value: null },
+        { type: 'I', value: 1 },
+        { type: 'I', value: 3 },
+      ]
+    },
+
+     {
+       question: 'I sometimes catch predators off guard with my willingness',      answers: [
+         { type: 'S', value: 3 },
+        { type: 'S', value: 1 },
+        { type: null, value: null },
+        { type: 'I', value: 1 },
+        { type: 'I', value: 3 },
+      ]
+    },
+
+     {
+       question: 'I sometimes get jealous of other prey.',      
+     answers: [
+       { type: 'S', value: 3 },
+        { type: 'S', value: 1 },
+        { type: null, value: null },
+        { type: 'I', value: 1 },
+        { type: 'I', value: 3 },
+      ]
+    },
+
+    {question:  "I disdain predators who can't appreciate how delicious I am",      
+    answers: [
+       { type: 'S', value: 3 },
+        { type: 'S', value: 1 },
+        { type: null, value: null },
+        { type: 'I', value: 1 },
+        { type: 'I', value: 3 },
+      ]
+    },
+
+    /* W PREY -  SHARED */
+
+   {question:  'I would feel comfortable sharing a stomach with another prey.',
+    answers: [
+       { type: 'I', value: 3 },
+        { type: 'I', value: 1 },
+        { type: null, value: null },
+        { type: 'S', value: 1 },
+        { type: 'S', value: 3 },
+      ]
+    },
+
+   {question:  'I enjoy hearing sounds of approval from my predator.',
+    answers: [
+        { type: 'I', value: 3 },
+        { type: 'I', value: 1 },
+        { type: null, value: null },
+        { type: 'S', value: 1 },
+        { type: 'S', value: 3 },
+      ]
+    },
+
+    {question: 'I love helping a predator practice devouring people, myself included.',
+      answers: [
+          { type: 'I', value: 3 },
+        { type: 'I', value: 1 },
+        { type: null, value: null },
+        { type: 'S', value: 1 },
+        { type: 'S', value: 3 },
+      ]
+    },
+
+    {question: "I'd do everything I could to make myself easier to swallow for a predator.",
+    answers: [
+            { type: 'I', value: 3 },
+        { type: 'I', value: 1 },
+        { type: null, value: null },
+        { type: 'S', value: 1 },
+        { type: 'S', value: 3 },
+      ]
+    },
+
+    {question: 'I would want my predator to treat me with the same respect I give them.',
+    answers: [
+           { type: 'I', value: 3 },
+        { type: 'I', value: 1 },
+        { type: null, value: null },
+        { type: 'S', value: 1 },
+        { type: 'S', value: 3 },
+      ]
+    },
+
+    /* W PREY -  VISCERAL */
+
+    {question: "I'd want my predator to treat me like food, and nothing more.",
+    answers: [
+           { type: 'E', value: 3 },
+        { type: 'E', value: 1 },
+        { type: null, value: null },
+        { type: 'V', value: 1 },
+        { type: 'V', value: 3 },
+      ]
+    },
+
+    {question: "I'd gladly share a stomach with regular food.",
+    answers: [
+            { type: 'E', value: 3 },
+        { type: 'E', value: 1 },
+        { type: null, value: null },
+        { type: 'V', value: 1 },
+        { type: 'V', value: 3 },
+      ]
+    },
+
+    {question: 'The sensation of being devoured is the most important part.',
+    answers: [
+             { type: 'E', value: 3 },
+        { type: 'E', value: 1 },
+        { type: null, value: null },
+        { type: 'V', value: 1 },
+        { type: 'V', value: 3 },
+      ]
+    },
+
+    {question: "I wouldn't mind being eaten by a total stranger.",
+    answers: [
+             { type: 'E', value: 3 },
+        { type: 'E', value: 1 },
+        { type: null, value: null },
+        { type: 'V', value: 1 },
+        { type: 'V', value: 3 },
+      ]
+    },
+
+    {question: "I'd rather my predator rub me from the outside than speak to me when I'm in their belly",
+    answers: [
+             { type: 'E', value: 3 },
+        { type: 'E', value: 1 },
+        { type: null, value: null },
+        { type: 'V', value: 1 },
+        { type: 'V', value: 3 },
+      ]
+    },
+
+
+    /* W PREY -  EMOTIONAL */
+
+    {question: "I want to feel like I'm someone special to my predator.",
+        answers: [
+             { type: 'V', value: 3 },
+        { type: 'V', value: 1 },
+        { type: null, value: null },
+        { type: 'E', value: 1 },
+        { type: 'E', value: 3 },
+      ]
+    },
+    {question: "Listening to my predator's heartbeat from the inside soothes me.",
+            answers: [
+             { type: 'V', value: 3 },
+        { type: 'V', value: 1 },
+        { type: null, value: null },
+        { type: 'E', value: 1 },
+        { type: 'E', value: 3 },
+      ]
+    },
+    {question: 'An emotional connection to my predator is paramount in vore.',
+            answers: [
+             { type: 'V', value: 3 },
+        { type: 'V', value: 1 },
+        { type: null, value: null },
+        { type: 'E', value: 1 },
+        { type: 'E', value: 3 },
+      ]
+    },
+    {question: "I'd rather be eaten by my friends than strangers.",
+            answers: [
+             { type: 'V', value: 3 },
+        { type: 'V', value: 1 },
+        { type: null, value: null },
+        { type: 'E', value: 1 },
+        { type: 'E', value: 3 },
+      ]
+    },
+   {question:  "I'd want to chat with my predator while I was in their stomach",
+            answers: [
+             { type: 'V', value: 3 },
+        { type: 'V', value: 1 },
+        { type: null, value: null },
+        { type: 'E', value: 1 },
+        { type: 'E', value: 3 },
+      ]
+    },
+
+    /* W PREY -  ACTIVE */
+
+    {question: 'I make myself a target to predators however I can.', 
+              answers: [
+             { type: 'P', value: 3 },
+        { type: 'P', value: 1 },
+        { type: null, value: null },
+        { type: 'A', value: 1 },
+        { type: 'A', value: 3 },
+      ]
+    },
+    {question: 'When I see a predator yawn, I have to hold myself back from diving right in',
+              answers: [
+             { type: 'P', value: 3 },
+        { type: 'P', value: 1 },
+        { type: null, value: null },
+        { type: 'A', value: 1 },
+        { type: 'A', value: 3 },
+      ]
+    },
+    {question: "I love struggling and rubbing the walls when I'm in a gut.",
+              answers: [
+             { type: 'P', value: 3 },
+        { type: 'P', value: 1 },
+        { type: null, value: null },
+        { type: 'A', value: 1 },
+        { type: 'A', value: 3 },
+      ]
+    },
+    {question: 'I put myself in perilous situations on the prospect of being eaten.',
+                  answers: [
+             { type: 'P', value: 3 },
+        { type: 'P', value: 1 },
+        { type: null, value: null },
+        { type: 'A', value: 1 },
+        { type: 'A', value: 3 },
+      ]
+    },
+    {question: 'I like to leave my fate up to games of chance.',
+                  answers: [
+             { type: 'P', value: 3 },
+        { type: 'P', value: 1 },
+        { type: null, value: null },
+        { type: 'A', value: 1 },
+        { type: 'A', value: 3 },
+      ]
+    },
+
+   /* W PREY -  PASSIVE */
+
+    {question: "I don't draw attention to myself, waiting for predators to come to me.",
+                 answers: [
+             { type: 'A', value: 3 },
+        { type: 'A', value: 1 },
+        { type: null, value: null },
+        { type: 'P', value: 1 },
+        { type: 'P', value: 3 },
+      ]
+    },
+    {question: 'Open maws and big bellies make me flustered.',
+                 answers: [
+              { type: 'A', value: 3 },
+        { type: 'A', value: 1 },
+        { type: null, value: null },
+        { type: 'P', value: 1 },
+        { type: 'P', value: 3 },
+      ]
+    },
+    {question: "I lay back and let the predator do the work when I'm in a stomach.",
+                     answers: [
+                { type: 'A', value: 3 },
+        { type: 'A', value: 1 },
+        { type: null, value: null },
+        { type: 'P', value: 1 },
+        { type: 'P', value: 3 },
+      ]
+    },
+    {question: 'I take the safe route wherever I can, but predators find me anyway.',
+                     answers: [
+              { type: 'A', value: 3 },
+        { type: 'A', value: 1 },
+        { type: null, value: null },
+        { type: 'P', value: 1 },
+        { type: 'P', value: 3 },
+      ]
+    },
+    {question: 
     'I like to talk with my predator, calmly outlining what I would enjoy.',
+        answers: [
+        { type: 'A', value: 3 },
+        { type: 'A', value: 1 },
+        { type: null, value: null },
+        { type: 'P', value: 1 },
+        { type: 'P', value: 3 },
+      ]
+    },
 
-    // Sexual
+    /* W PREY -  SEXUAL */
+
+    {question: 
     'Nothing turns me on quite like sliding down a throat.',
+        answers: [
+        { type: 'N', value: 3 },
+        { type: 'N', value: 1 },
+        { type: null, value: null },
+        { type: 'X', value: 1 },
+        { type: 'X', value: 3 },
+      ]
+    },    
+    {question:     
     "I typically need to pleasure myself after being confined to a predator's stomach",
-    'I have wet dreams about being devoured.',
-    "My predator should pay special attention to my crotch when it's in their mouth.",
-    'I enjoy flirtatious comments from my predator.',
+        answers: [
+        { type: 'N', value: 3 },
+        { type: 'N', value: 1 },
+        { type: null, value: null },
+        { type: 'X', value: 1 },
+        { type: 'X', value: 3 },
+      ]
+    },
+        {question: 'I have wet dreams about being devoured.',
+        answers: [
+        { type: 'N', value: 3 },
+        { type: 'N', value: 1 },
+        { type: null, value: null },
+        { type: 'X', value: 1 },
+        { type: 'X', value: 3 },
+      ]
+    },
+        {question: "My predator should pay special attention to my crotch when it's in their mouth.",
+        answers: [
+               { type: 'N', value: 3 },
+        { type: 'N', value: 1 },
+        { type: null, value: null },
+        { type: 'X', value: 1 },
+        { type: 'X', value: 3 },
+      ]
+    },
+        {question: 'I enjoy flirtatious comments from my predator.',
+        answers: [
+        { type: 'N', value: 3 },
+        { type: 'N', value: 1 },
+        { type: null, value: null },
+        { type: 'X', value: 1 },
+        { type: 'X', value: 3 },
+      ]
+    },
 
-    // Sensual
-    'Being in a stomach is comforting.',
-    "I relish the thought of becoming part of my predator's body.",
-    'I imagine myself in a stomach when I need to relax.',
-    'Being eaten can be a great boost to my mood and confidence.',
-    'I use vore as a chance to escape my boring day-to-day.',
-  ],
-  upreyStatements = [
-    // Individual
+    /* W PREY -  SENSUAL */
+
+   {question:  'Being in a stomach is comforting.', 
+    answers: [ { type: 'X', value: 3 },
+        { type: 'X', value: 1 },
+        { type: null, value: null },
+        { type: 'N', value: 1 },
+        { type: 'N', value: 3 },
+      ]
+    },
+    {question:  "I relish the thought of becoming part of my predator's body.",     answers: [ { type: 'X', value: 3 },
+        { type: 'X', value: 1 },
+        { type: null, value: null },
+        { type: 'N', value: 1 },
+        { type: 'N', value: 3 },
+      ]
+    },
+    {question:  'I imagine myself in a stomach when I need to relax.',     answers: [ { type: 'X', value: 3 },
+        { type: 'X', value: 1 },
+        { type: null, value: null },
+        { type: 'N', value: 1 },
+        { type: 'N', value: 3 },
+      ]
+    },
+    {question:  'Being eaten can be a great boost to my mood and confidence.',     answers: [ { type: 'X', value: 3 },
+        { type: 'X', value: 1 },
+        { type: null, value: null },
+        { type: 'N', value: 1 },
+        { type: 'N', value: 3 },
+      ]
+    },
+    {question:  'I use vore as a chance to escape my boring day-to-day.', 
+        answers: [ { type: 'X', value: 3 },
+        { type: 'X', value: 1 },
+        { type: null, value: null },
+        { type: 'N', value: 1 },
+        { type: 'N', value: 3 },
+      ]
+    },
+],
+
+upreyStatements = [
+
+    //  UW = INDIVIDUAL
+
+    {question:  
     'I roll my eyes at predators who tell me how hungry they are.',
-    'Teasing me about being prey rarely gets a predator anywhere.',
-    "I'm not afraid to hurt a predator if it means escaping them.",
-    'Willing Prey perplex me.',
-    "I'm not above poisoning my predator if I'm eaten by them.",
+        answers: [ { type: 'S', value: 3 },
+        { type: 'S', value: 1 },
+        { type: null, value: null },
+        { type: 'I', value: 1 },
+        { type: 'I', value: 3 },
+      ]
+    },
 
-    // Shared
-    'I sometimes falter if a predator appeals to my sense of good will.',
+     {question:   
+      'Teasing me about being prey rarely gets a predator anywhere.',
+        answers: [ { type: 'S', value: 3 },
+        { type: 'S', value: 1 },
+        { type: null, value: null },
+        { type: 'I', value: 1 },
+        { type: 'I', value: 3 },
+      ]
+    },
+
+    {question:    
+     "I'm not afraid to hurt a predator if it means escaping them.",
+        answers: [ { type: 'S', value: 3 },
+        { type: 'S', value: 1 },
+        { type: null, value: null },
+        { type: 'I', value: 1 },
+        { type: 'I', value: 3 },
+      ]
+    },
+
+     {question:   
+      'Willing Prey perplex me.',
+        answers: [ { type: 'S', value: 3 },
+        { type: 'S', value: 1 },
+        { type: null, value: null },
+        { type: 'I', value: 1 },
+        { type: 'I', value: 3 },
+      ]
+    },
+
+       {question:  
+       "I'm not above poisoning my predator if I'm eaten by them.",
+        answers: [ { type: 'S', value: 3 },
+        { type: 'S', value: 1 },
+        { type: null, value: null },
+        { type: 'I', value: 1 },
+        { type: 'I', value: 3 },
+      ]
+    },
+
+    // UW = SHARED
+
+       {question:  
+       'I sometimes falter if a predator appeals to my sense of good will.',
+    answers: [ { type: 'I', value: 3 },
+        { type: 'I', value: 1 },
+        { type: null, value: null },
+        { type: 'S', value: 1 },
+        { type: 'S', value: 3 },
+      ]
+    },
+
+    {question:   
     'If I made an agreement to be prey, I would begrudgingly uphold it.',
+    answers: [ { type: 'I', value: 3 },
+        { type: 'I', value: 1 },
+        { type: null, value: null },
+        { type: 'S', value: 1 },
+        { type: 'S', value: 3 },
+      ]
+    },
+
+    {question:   
     'I try my best to reason with a predator when cornered',
+    answers: [ { type: 'I', value: 3 },
+        { type: 'I', value: 1 },
+        { type: null, value: null },
+        { type: 'S', value: 1 },
+        { type: 'S', value: 3 },
+      ]
+    },
+
+    {question:   
     'I have a few select individuals I might consider being eaten by.',
-    'I could be convinced to be prey, for a high price or extremely good reason.',
+    answers: [ { type: 'I', value: 3 },
+        { type: 'I', value: 1 },
+        { type: null, value: null },
+        { type: 'S', value: 1 },
+        { type: 'S', value: 3 },
+      ]
+    },
 
-    // Visceral
+    {question:    
+   'I could be convinced to be prey, for a high price or extremely good reason.',
+    answers: [ { type: 'I', value: 3 },
+        { type: 'I', value: 1 },
+        { type: null, value: null },
+        { type: 'S', value: 1 },
+        { type: 'S', value: 3 },
+      ]
+    },
+
+    // UW - VISCERAL
+    
+    {question: 
     'Being in a tight, cramped stomach sounds like my worst nightmare.',
+    answers: [ { type: 'E', value: 3 },
+        { type: 'E', value: 1 },
+        { type: null, value: null },
+        { type: 'V', value: 1 },
+        { type: 'V', value: 3 },
+      ]
+    },
+
+    {question: 
     'I try to find ways to protect myself from stomach acids, avoiding digesting for as long as I can.',
-    'Predators with sharp teeth make me feel nervous.',
+       answers: [ { type: 'E', value: 3 },
+        { type: 'E', value: 1 },
+        { type: null, value: null },
+        { type: 'V', value: 1 },
+        { type: 'V', value: 3 },
+      ]
+    },
+
+    {question: 'Predators with sharp teeth make me feel nervous.',
+          answers: [ { type: 'E', value: 3 },
+        { type: 'E', value: 1 },
+        { type: null, value: null },
+        { type: 'V', value: 1 },
+        { type: 'V', value: 3 },
+      ]
+    },
+
+    {question: 
     'I would kick and yell to attract the attention of passers by if I were eaten.',
+          answers: [ { type: 'E', value: 3 },
+        { type: 'E', value: 1 },
+        { type: null, value: null },
+        { type: 'V', value: 1 },
+        { type: 'V', value: 3 },
+      ]
+    },
+
+    {question: 
     'My fear of being devoured stems majorly from the physical pain I would be in.',
+          answers: [ { type: 'E', value: 3 },
+        { type: 'E', value: 1 },
+        { type: null, value: null },
+        { type: 'V', value: 1 },
+        { type: 'V', value: 3 },
+      ]
+    },
 
-    // Emotional
+    // UW - EMOTIONAL
+
+    {question: 
     "Being in a predator's gut would be ungodly humiliating.",
+        answers: [ { type: 'V', value: 3 },
+        { type: 'V', value: 1 },
+        { type: null, value: null },
+        { type: 'E', value: 1 },
+        { type: 'E', value: 3 },
+      ]
+    },
+
+    {question: 
     'A predator can tease me to the point of blushing.',
+        answers: [ { type: 'V', value: 3 },
+        { type: 'V', value: 1 },
+        { type: null, value: null },
+        { type: 'E', value: 1 },
+        { type: 'E', value: 3 },
+      ]
+    },
+
+    {question: 
     "I'd rather disappear entirely than have my friends know I was ever prey.",
+        answers: [ { type: 'V', value: 3 },
+        { type: 'V', value: 1 },
+        { type: null, value: null },
+        { type: 'E', value: 1 },
+        { type: 'E', value: 3 },
+      ]
+    },
+    
+    {question: 
     "I try not to be noticable when I'm eaten, to avoid attracting attention and further embarrassment.",
+        answers: [ { type: 'V', value: 3 },
+        { type: 'V', value: 1 },
+        { type: null, value: null },
+        { type: 'E', value: 1 },
+        { type: 'E', value: 3 },
+      ]
+    },
+
+    {question: 
     'Being eaten makes me feel weak and submissive.',
+        answers: [ { type: 'V', value: 3 },
+        { type: 'V', value: 1 },
+        { type: null, value: null },
+        { type: 'E', value: 1 },
+        { type: 'E', value: 3 },
+      ]
+    },
 
-    // Active
+    // UW - ACTIVE
+
+    {question: 
     "I put up a fight and try to escape when I'm caught.",
+        answers: [ { type: 'P', value: 3 },
+        { type: 'P', value: 1 },
+        { type: null, value: null },
+        { type: 'A', value: 1 },
+        { type: 'A', value: 3 },
+      ]
+    },
+
+    {question: 
     "I would never submit to a predator's whims.",
+        answers: [ { type: 'P', value: 3 },
+        { type: 'P', value: 1 },
+        { type: null, value: null },
+        { type: 'A', value: 1 },
+        { type: 'A', value: 3 },
+      ]
+    },
+
+    {question: 
     'Predators would need to tie me up to keep me from escaping.',
+        answers: [ { type: 'P', value: 3 },
+        { type: 'P', value: 1 },
+        { type: null, value: null },
+        { type: 'A', value: 1 },
+        { type: 'A', value: 3 },
+      ]
+    },
+
+    {question: 
     'I would attempt to climb back up the throat if I were eaten',
+        answers: [ { type: 'P', value: 3 },
+        { type: 'P', value: 1 },
+        { type: null, value: null },
+        { type: 'A', value: 1 },
+        { type: 'A', value: 3 },
+      ]
+    },
+
+    {question: 
     "I'd be glad knowing I gave a predator a stomach ache for eating me.",
+        answers: [ { type: 'P', value: 3 },
+        { type: 'P', value: 1 },
+        { type: null, value: null },
+        { type: 'A', value: 1 },
+        { type: 'A', value: 3 },
+      ]
+    },
 
-    // Passive
+    // UW - PASSIVE
+
+    {question: 
     "I resign to my fate when I'm caught.",
+        answers: [ { type: 'A', value: 3 },
+        { type: 'A', value: 1 },
+        { type: null, value: null },
+        { type: 'P', value: 1 },
+        { type: 'P', value: 3 },
+      ]
+    },
+    {question: 
     "I'll often play along with the predator if it means I might not be eaten.",
+        answers: [ { type: 'A', value: 3 },
+        { type: 'A', value: 1 },
+        { type: null, value: null },
+        { type: 'P', value: 1 },
+        { type: 'P', value: 3 },
+      ]
+    },
+    {question: 
     "I'll go down without a fight, even if I hate it every step of the way.",
+        answers: [ { type: 'A', value: 3 },
+        { type: 'A', value: 1 },
+        { type: null, value: null },
+        { type: 'P', value: 1 },
+        { type: 'P', value: 3 },
+      ]
+    },
+    {question: 
     "I'd rather conserve my energy and struggle in a gut than tire myself out struggling in a throat.",
+        answers: [ { type: 'A', value: 3 },
+        { type: 'A', value: 1 },
+        { type: null, value: null },
+        { type: 'P', value: 1 },
+        { type: 'P', value: 3 },
+      ]
+    },
+    {question: 
     "I'm likely to give up the moment the predator belches.",
+        answers: [ { type: 'A', value: 3 },
+        { type: 'A', value: 1 },
+        { type: null, value: null },
+        { type: 'P', value: 1 },
+        { type: 'P', value: 3 },
+      ]
+    },
 
-    // Sexual
+    // UW - SEXUAL
+
+    {question: 
     "I sometimes feel aroused when I'm in someone's jaws, even if I don't want to be.",
+        answers: [ { type: 'N', value: 3 },
+        { type: 'N', value: 1 },
+        { type: null, value: null },
+        { type: 'S', value: 1 },
+        { type: 'S', value: 3 },
+      ]
+    },
+    {question: 
     'A predator can get me to moan if they rub their gut just right.',
+        answers: [ { type: 'N', value: 3 },
+        { type: 'N', value: 1 },
+        { type: null, value: null },
+        { type: 'S', value: 1 },
+        { type: 'S', value: 3 },
+      ]
+    },
+    {question: 
     'I have some preferences on who, or what, I would want to be eaten by if I had no choice.',
+        answers: [ { type: 'N', value: 3 },
+        { type: 'N', value: 1 },
+        { type: null, value: null },
+        { type: 'S', value: 1 },
+        { type: 'S', value: 3 },
+      ]
+    },
+    {question: 
     "If I did get eaten, I'd want the predator to be physically attractive ",
+        answers: [ { type: 'N', value: 3 },
+        { type: 'N', value: 1 },
+        { type: null, value: null },
+        { type: 'S', value: 1 },
+        { type: 'S', value: 3 },
+      ]
+    },
+    {question: 
     "Being told how I would add to someone's hips is oddly invigorating.",
+        answers: [ { type: 'N', value: 3 },
+        { type: 'N', value: 1 },
+        { type: null, value: null },
+        { type: 'S', value: 1 },
+        { type: 'S', value: 3 },
+      ]
+    },
 
-    // Sensual
+
+    // UW - SENSUAL
+    
+    {question: 
     "My friends would describe me as 'pouty' if they successfully stomach me.",
+        answers: [ { type: 'X', value: 3 },
+        { type: 'X', value: 1 },
+        { type: null, value: null },
+        { type: 'N', value: 1 },
+        { type: 'N', value: 3 },
+      ]
+    },
+    {question: 
     "I would reluctantly rub a predator's gut if it meant a chance at being let out.",
+        answers: [ { type: 'X', value: 3 },
+        { type: 'X', value: 1 },
+        { type: null, value: null },
+        { type: 'N', value: 1 },
+        { type: 'N', value: 3 },
+      ]
+    },
+    {question: 
     "I would try to appeal to a predator's sense of humanity to convince them not to eat me.",
+        answers: [ { type: 'X', value: 3 },
+        { type: 'X', value: 1 },
+        { type: null, value: null },
+        { type: 'N', value: 1 },
+        { type: 'N', value: 3 },
+      ]
+    },
+    {question: 
     'I will bargain with a predator for my freedom.',
+        answers: [ { type: 'X', value: 3 },
+        { type: 'X', value: 1 },
+        { type: null, value: null },
+        { type: 'N', value: 1 },
+        { type: 'N', value: 3 },
+      ]
+    },
+    {question: 
     'I could never find being eaten arousing.',
-  ];
+        answers: [ { type: 'X', value: 3 },
+        { type: 'X', value: 1 },
+        { type: null, value: null },
+        { type: 'N', value: 1 },
+        { type: 'N', value: 3 },
+      ]
+     } 
+];
 
 //TestLogic
 var testType = '',
   type = '',
   FinalScore = '',
-  QuestionNo = 0,
+  questionNo = 0,
   inc = 0;
 
 var typeDesc = '';
@@ -262,7 +1354,7 @@ hideOptions();
 function resetScores() {
   (I = 0), (S = 0), (V = 0), (E = 0), (A = 0), (P = 0), (X = 0), (N = 0);
   type = '';
-  QuestionNo = 0;
+  questionNo = 0;
 }
 
 //Reset Button
@@ -340,20 +1432,18 @@ function finalResult() {
 }
 
 function question() {
-  checkFinal();
-  if (QuestionNo >= 0 && QuestionNo <= 4) {
+  if (questionNo >= 0 && questionNo <= 4) {
     questionType = 'I';
-  } else if (QuestionNo >= 5 && QuestionNo <= 9) questionType = 'S';
-  else if (QuestionNo >= 10 && QuestionNo <= 14) questionType = 'V';
-  else if (QuestionNo >= 15 && QuestionNo <= 19) questionType = 'E';
-  else if (QuestionNo == 20 && QuestionNo <= 24) questionType = 'A';
-  else if (QuestionNo == 25 && QuestionNo <= 29) questionType = 'P';
-  else if (QuestionNo == 30 && QuestionNo <= 34) questionType = 'X';
-  else if (QuestionNo == 35 && QuestionNo <= 39) questionType = 'N';
+  } else if (questionNo >= 5 && questionNo <= 9) questionType = 'S';
+  else if (questionNo >= 10 && questionNo <= 14) questionType = 'V';
+  else if (questionNo >= 15 && questionNo <= 19) questionType = 'E';
+  else if (questionNo == 20 && questionNo <= 24) questionType = 'A';
+  else if (questionNo == 25 && questionNo <= 29) questionType = 'P';
+  else if (questionNo == 30 && questionNo <= 34) questionType = 'X';
+  else if (questionNo == 35 && questionNo <= 39) questionType = 'N';
 
-  title2.innerText = 'Statement ' + (QuestionNo + 1) + '/40';
-  textarea.innerText = testType[QuestionNo];
-  checkFinal();
+  title2.innerText = 'Statement ' + (questionNo + 1) + '/40';
+  textarea.innerText = testType[questionNo].question;
 }
 
 //Choosing the Test Type
@@ -398,93 +1488,74 @@ upreyTest.addEventListener('click', function () {
 
 //Checks which score to change
 
-function typeCheck() {
-  switch (questionType) {
+function typeCheck(type, value) {
+  switch (type) {
     case 'I':
-      I = I + inc;
+      I = I + value;
       break;
     case 'S':
-      S = S + inc;
+      S = S + value;
       break;
     case 'V':
-      V = V + inc;
+      V = V + value;
       break;
     case 'E':
-      E = E + inc;
+      E = E + value;
       break;
     case 'A':
-      A = A + inc;
+      A = A + value;
       break;
     case 'P':
-      P = P + inc;
+      P = P + value;
       break;
     case 'X':
-      X = X + inc;
+      X = X + value;
       break;
     case 'N':
-      N = N + inc;
+      N = N + value;
       break;
   }
 }
 
 //Buttons
 
+function onAnswer(index) {
+  progressbarfill.style.width = `${((questionNo + 1) / 40) * 100}%`;
+  console.log(testType[questionNo]);
+  let answer = testType[questionNo].answers[index];
+  if (answer.type != null && answer.value != null) {
+    typeCheck(answer.type, answer.value);
+  }
+  questionNo++;
+  if(checkFinal()){
+    return;
+  };
+  question();
+}
+
 stragr.addEventListener('click', function () {
-  //update score
-  inc = 2;
-  //update progress bar
-  progressbarfill.style.width = `${((QuestionNo + 1) / 40) * 100}%`;
-  //Checks the Question Type
-  typeCheck();
-  //Increases the Question Number
-  QuestionNo++;
-  //Checks if it's the final question
-  checkFinal();
-  //Displays the question based on above
-  question();
+  onAnswer(4);
 });
-
 agr.addEventListener('click', function () {
-  inc = 1;
-  progressbarfill.style.width = `${((QuestionNo + 1) / 40) * 100}%`;
-  typeCheck();
-  QuestionNo++;
-  checkFinal();
-  question();
+  onAnswer(3);
 });
-
 na.addEventListener('click', function () {
-  inc = 1;
-  progressbarfill.style.width = `${((QuestionNo + 1) / 40) * 100}%`;
-  typeCheck();
-  QuestionNo++;
-  checkFinal();
-  question();
+  onAnswer(2);
 });
-
 dis.addEventListener('click', function () {
-  inc = 0;
-  progressbarfill.style.width = `${((QuestionNo + 1) / 40) * 100}%`;
-  typeCheck();
-  QuestionNo++;
-  checkFinal();
-  question();
+  onAnswer(1);
 });
-
 strdis.addEventListener('click', function () {
-  inc = 0;
-  progressbarfill.style.width = `${((QuestionNo + 1) / 40) * 100}%`;
-  typeCheck();
-  QuestionNo++;
-  checkFinal();
-  question();
+  onAnswer(0);
 });
 
 function checkFinal() {
-  if (QuestionNo >= 40) {
+  if (questionNo >= testType.length) {
     hideOptions();
     finalResult();
+    return true;
   }
+  return false;
 }
 
 function debugMode() {
@@ -925,31 +1996,32 @@ function descriptions() {
     '<br /> <br />' +
     xsDesc;
 
-
   // PERCENTAGE CALCULATOR
 
-let isTotal = (I + S);
-let veTotal = (V + E);
-let apTotal = (A + P);
-let xnTotal = (X + N);
+  // Hard code max values for all (30) strdis+stragr
 
-let iPerc = ((I / isTotal) * 100);
-let sPerc = ((S / isTotal) * 100);
-let vPerc = ((V / veTotal) * 100);
-let ePerc = ((E / veTotal) * 100);
-let aPerc = ((A / apTotal) * 100);
-let pPerc = ((P / apTotal) * 100);
-let xPerc = ((X / xnTotal) * 100);
-let nPerc = ((N / xnTotal) * 100);
+  let isTotal = 30;
+  let veTotal = 30;
+  let apTotal = 30;
+  let xnTotal = 30;
 
-// STRDIS=0 DIS=0 NEU=1 AGR=2 STRAGR=3
+  let iPerc = (I / isTotal) * 100;
+  let sPerc = (S / isTotal) * 100;
+  let vPerc = (V / veTotal) * 100;
+  let ePerc = (E / veTotal) * 100;
+  let aPerc = (A / apTotal) * 100;
+  let pPerc = (P / apTotal) * 100;
+  let xPerc = (X / xnTotal) * 100;
+  let nPerc = (N / xnTotal) * 100;
 
-  scoreI.innerText =  Math.round(iPerc) + "%";
-  scoreS.innerText =  Math.round(sPerc) + "%";
-  scoreV.innerText =  Math.round(vPerc) + "%";
-  scoreE.innerText =  Math.round(ePerc) + "%";
-  scoreA.innerText =  Math.round(aPerc) + "%";
-  scoreP.innerText =  Math.round(pPerc) + "%";
-  scoreX.innerText =  Math.round(xPerc) + "%";
-  scoreN.innerText =  Math.round(nPerc) + "%";
+  // STRDIS=3 to Opposite, DIS=1 to Opposite, NEU=0,  AGR=2, STRAGR=3
+
+  scoreI.innerText = Math.round(iPerc) + '%';
+  scoreS.innerText = Math.round(sPerc) + '%';
+  scoreV.innerText = Math.round(vPerc) + '%';
+  scoreE.innerText = Math.round(ePerc) + '%';
+  scoreA.innerText = Math.round(aPerc) + '%';
+  scoreP.innerText = Math.round(pPerc) + '%';
+  scoreX.innerText = Math.round(xPerc) + '%';
+  scoreN.innerText = Math.round(nPerc) + '%';
 }
