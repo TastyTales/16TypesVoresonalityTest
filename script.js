@@ -462,7 +462,7 @@ var predStatements = [
     },
 
    {
-      question:  'Sometimes I carress my belly for hours, thinking of the prey inside.',answers: [
+      question:  'Sometimes I caress my belly for hours, thinking of the prey inside.',answers: [
         { type: 'X', value: 3 },
         { type: 'X', value: 1 },
         { type: null, value: null },
@@ -508,7 +508,7 @@ wpreyStatements = [
     /* W PREY - INDIVIDUAL */
 
     {
-      question: 'My predator should accommodate for my tastes.',
+      question: 'My predator should accommodate my tastes.',
         answers: [
         { type: 'S', value: 3 },
         { type: 'S', value: 1 },
@@ -890,7 +890,7 @@ wpreyStatements = [
         { type: 'N', value: 3 },
       ]
     },
-    {question:  'I use vore as a chance to escape my boring day-to-day.', 
+    {question:  'I use vore as a chance to escape my boring day-to-day life.', 
         answers: [ { type: 'X', value: 3 },
         { type: 'X', value: 1 },
         { type: null, value: null },
